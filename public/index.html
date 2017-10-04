@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Home</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+
+        window.onload = init;
+
+        function init(){
+
+        }
+        function toggleDropDownContent() {
+            var dropDown = document.getElementsByClassName("dropdown-content")[0];
+            if(dropDown.style.display === "none"){
+                dropDown.style.display = "block";
+            }else{
+                dropDown.style.display = "none";
+            }
+
+        }
+
+    </script>
+
+    <style>
+
+        main{
+            overflow: hidden;
+        }
+
+        body{
+            background-color: #e0e0dd;
+
+        }
+        ul {
+            list-style-type: none;
+        }
+        #nav {
+            background: #52809f;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+        }
+        #nav-wrapper {
+            width: 90%;
+            margin: 0px auto;
+            text-align: left;
+        }
+        #nav ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        #nav ul li {
+            display: inline-block;
+        }
+        #nav ul li:hover {
+            background: #52a5c3;
+        }
+        #nav ul li a, visited {
+            display: block;
+            padding: 15px;
+            color: #CCC;
+            text-decoration: none;
+        }
+
+        #search-bar{
+            width: 40%;
+            height: 2em;
+        }
+
+        #more{
+            text-transform: uppercase;
+            outline: 0;
+            background: #52809f;
+            border: 0;
+            color: #FFFFFF;
+            font-size: 14px;
+
+            top: 101em;
+            margin-left: 20px;
+            padding: 0;
+        }
+
+        .dropdown-content{
+            float:right;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+            display: none;
+            margin-top: 2.5em;
+        }
+
+        #dropdown-list{
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul><button onclick="toggleDropDownContent()" id="more">&#9776;</button>
+            <li><a href="index.html">Home</a>
+            </li>
+
+            <input id="search-bar" name="search" type="text" placeholder="What are you looking for?">
+            <input id="search-button" name="search_submit" type="submit" value="Search!">
+
+            <li><a href="#" onclick="toggleVisibility('Login')">Login</a>
+            </li>
+            <li><a href="#" onclick="toggleVisibility('Sign-out')">Sign Out</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="dropdown-content">
+    <ul id="dropdown-list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contacts.php">Contacts</a></li>
+        <li><a href="service.html">Service</a></li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>
