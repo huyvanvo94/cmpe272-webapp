@@ -19,5 +19,22 @@ for($i = 0; $i < count($contactsList); $i++){
 }
 ?>
 
+<h4>Contact Us</h4>
+
+<form action="response/form-contact.php" method="post">
+    <fieldset>Information
+        <p>
+            <label for="email-address">You Email Address:</label></br>
+            <input type="text" name="email-address"> <br>
+        </p>
+
+        <label>Comments</label><br>
+        <textarea name="message" rows="10" cols="30">
+        </textarea><br>
+        <input type="submit" name="submit" value="Submit">
+    </fieldset>
+</form>
+
+
 </body>
 </html>
