@@ -63,37 +63,11 @@
         }
         #nav ul li a, visited {
             display: block;
-            padding: 15px;
+            padding: 10px;
             color: #CCC;
             text-decoration: none;
         }
 
-        #more{
-            padding: 0px;
-            margin: 0px;
-        }
-
-        #more:hover{
-            background: #52a5c3;
-        }
-
-        #search-bar{
-            width: 40%;
-            height: 2em;
-        }
-
-        #more{
-            text-transform: uppercase;
-            outline: 0;
-            background: #52809f;
-            border: 0;
-            color: #FFFFFF;
-            font-size: 14px;
-
-            top: 101em;
-            margin-left: 20px;
-            padding: 0;
-        }
 
         .dropdown-content{
             float:right;
@@ -118,30 +92,17 @@
 
 <div id="nav">
     <div id="nav-wrapper">
-        <ul><button onclick="toggleDropDownContent()" id="more">&#9776;</button>
-            <li><a href="index.html">Home</a>
-            </li>
-
-            <input id="search-bar" name="search" type="text" placeholder="What are you looking for?">
-            <input id="search-button" name="search_submit" type="submit" value="Search!">
-
-            <li><a href="#" onclick="toggleVisibility('Login')">Login</a>
-            </li>
-            <li><a href="#" onclick="toggleVisibility('Sign-out')">Sign Out</a>
-            </li>
-
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="user.php">Users</a> </li>
         </ul>
     </div>
 </div>
 
-<div class="dropdown-content">
-    <ul id="dropdown-list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contacts.php">Contacts</a></li>
-        <li><a href="service.html">Service</a></li>
-    </ul>
-</div>
 
 
 
