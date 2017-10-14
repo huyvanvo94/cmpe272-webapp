@@ -5,47 +5,40 @@
 
 define('ROOTPATH', __DIR__);
 include('../../settings.php');
-
+include('util.php');
+include('../database.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($_POST['submit'] == 'Submit'){
-
         try{
-            // get user
 
+            // get user
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $email = $_POST['email'];
-            // compute user id
-            $userId = md5($firstName+$lastName+$email);
 
-            // TODO: get address
+            // get address
+            $zip = $_POST["zip"];
+            $street = $_POST["street"];
+            $city = $_POST["city"];
+            $state = $_POST["state"];
+            // get phone number
+            $mobile = $_POST["mobile"];
+            $home = $_POST["home"];
 
-            // TODO: get phone number
+            echo $home;
 
-            // init database connection
+            $dbConn = new DbConnect($settings);
+            $user = new User($dbConn);
 
-            $pdo = new PDO(sprintf(
-                'mysql:host=%s;dbname=%s;port=%s;charset=%s',
-                $settings['host'],
-                $settings['name'],
-                $settings['port'],
-                $settings['charset']
-            ),
-                $settings['username'],
-                $settings['password']
+            $result = $user->insertUser($firstName, $lastName, $email);
 
-            );
-            // set mode
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            // avoid sql injection
-            // insert user
-            $userInsertStmt = "INSERT INTO User(firstName, lastName, email) VALUES (':firstName', ':lastName', ':email'); ";
+            if($result == true){
+                $userId = $user->getUserId($firstName, $lastName, $email);
+                $user->insertPhoneNumber($userId, $home, $mobile);
+                $user->insertAddress($userId, $zip, $street, $city, $state);
+            }
 
-            $stmt = $pdo->prepare($userInsertStmt);
-            $stmt->bindValue(':firstName', $firstName);
-            $stmt->bindValue(':lastName', $lastName);
-            $stmt->bindValue(':email', $email);
-            $stmt->execute(); 
+            redirect('../user-creation.php');
 
         }catch (PDOException $e){
             // redirect to error page

@@ -1,5 +1,5 @@
 CREATE TABLE User(
-	userID INT NOT NULL UNIQUE,
+	userID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	firstName VARCHAR(100),
 	lastName VARCHAR(100),
 	email VARCHAR(100),
@@ -7,29 +7,28 @@ CREATE TABLE User(
 );
 
 CREATE TABLE PhoneNumber(
-	numberID INT NOT NULL UNIQUE,
-	userID INT, 
+	numberID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	userID   INT UNSIGNED, 
 	home VARCHAR(100),
-	mobile VARCHAR(100)
+	mobile VARCHAR(100),
 	PRIMARY KEY(numberID),
 	FOREIGN KEY (userID) REFERENCES User(userID)
 );
-
+-- Add for Address 
 CREATE TABLE Address(
-	addressID INT NOT NULL UNIQUE,
-	userID INT, 
-	ZIP           VARCHAR(12),
-  STREET        VARCHAR(200),
-  CITY          VARCHAR(100),
-  STATE         VARCHAR(100),
-  PRIMARY KEY (addressID),
-  FOREIGN KEY (userID) REFERENCES User(userID)
+	addressID 	  INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	userID 	      INT UNSIGNED, 
+	zip           VARCHAR(12),
+  	street        VARCHAR(200),
+  	city          VARCHAR(100),
+  	state         VARCHAR(100),
+  	PRIMARY KEY (addressID),
+  	FOREIGN KEY (userID) REFERENCES User(userID)
+);
+-- Holds ID from User and Address
+CREATE TABLE UserAddress(
+	userID INT,
+	addressID INT 
 );
 
--- Create Users 
-
-INSERT INTO User(firstName, lastName, email) 
-VALUES ('Bob', 'Dylan', 'bob.dylan@sjsu.edu'); 
-
-INSERT INTO Address(userID, zip, street, city, state)
-VALUES ( 1, '94501', '742 Park Ave', 'Oakland', 'CA');
+ 

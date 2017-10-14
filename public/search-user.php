@@ -12,7 +12,7 @@
 
         <p>
             <label>Search by names</label>
-            <input type="text" required />
+            <input type="text" name="names"/>
         </p>
 
         <p>
@@ -22,7 +22,7 @@
 
         <p>
             <label>Search by phone number</label>
-            <input type="text" required />
+            <input type="text"  />
         </p>
 
         <p>
