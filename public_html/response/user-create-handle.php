@@ -6,7 +6,7 @@
 define('ROOTPATH', __DIR__);
 include('../../settings.php');
 include('util.php');
-include('../database.php');
+include('../src/database.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($_POST['submit'] == 'Submit'){
         try{

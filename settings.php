@@ -1,10 +1,13 @@
 <?php
+
+namespace settings;
+
 $settings = [
-	'host' => '127.0.0.1',
+	'host' => 'localhost',
 	'port' => '3306',
-	'name' => 'db',
-	'username' => 'root',
-	'password' => 'root',
+	'name' => 'id3136611_db',
+	'username' => 'id3136611_root',
+	'password' => 'Sdfsdf4fff',
 	'charset' => 'utf8'
 ];
 ?>

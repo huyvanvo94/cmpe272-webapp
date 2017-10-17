@@ -8,13 +8,13 @@
 <!-- A simple web page for admin login.-->
 
 <div class="login-page">
-    <form action="#">
+    <form action="response/login.php" method="post">
         <fieldset>
             <legend>Admin Login</legend>
-            Username: <input type="text"><br>
-            Password: <input type="password"><br>
+            Username: <input type="text" name="username"><br>
+            Password: <input type="password" name="password"><br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </fieldset>
     </form>
 </div>

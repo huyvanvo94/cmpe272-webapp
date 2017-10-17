@@ -11,6 +11,7 @@
 <h3>Contact Information</h3>
 
 <?php
+
 $fileName = "contacts.txt";
 
 $contactsList = file($fileName, FILE_IGNORE_NEW_LINES);

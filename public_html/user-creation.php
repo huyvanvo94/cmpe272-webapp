@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>New User</title>
+
+    <script>
+        // validate inputs
+
+    </script>
 </head>
 <body>
 

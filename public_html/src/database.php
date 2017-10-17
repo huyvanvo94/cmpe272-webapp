@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class DbConnect
  * Class to handle database operations
@@ -54,7 +55,6 @@ class DbConnect
  * Class User
  *
  */
-
 class User{
 
     private $dbConnect, $userId;
@@ -65,7 +65,8 @@ class User{
     }
 
     public function searchByName($firstName, $lastName){
-        $query = "SELECT * FROM User WHERE firstName = ? AnD lastName = ?";
+        $query = "SELECT * FROM User 
+                  WHERE firstName = ? AND lastName = ?";
         $stmt = $this->dbConnect->prepare($query);
         $stmt->execute([$firstName, $lastName]);
 
@@ -83,7 +84,8 @@ class User{
 
     public function insertUser($firstName, $lastName, $email){
         try{
-            $userInsertStmt = "INSERT INTO User(firstName, lastName, email) VALUES (:firstName, :lastName, :email)";
+            $userInsertStmt = "INSERT INTO User(firstName, lastName, email) 
+                              VALUES (:firstName, :lastName, :email)";
 
             $stmt = $this->dbConnect->prepare($userInsertStmt);
             $stmt->bindValue(':firstName', $firstName);
@@ -98,7 +100,8 @@ class User{
 
     public function insertPhoneNumber($userId, $home, $mobile){
         try{
-            $numberStmt = "INSERT INTO PhoneNumber(userId, home, mobile) VALUES (:userId, :home, :mobile)";
+            $numberStmt = "INSERT INTO PhoneNumber(userId, home, mobile) 
+                          VALUES (:userId, :home, :mobile)";
             $stmt = $this->dbConnect->prepare($numberStmt);
             $stmt->bindValue(':userId', $userId);
             $stmt->bindValue(':home', $home);
@@ -113,7 +116,8 @@ class User{
 
     public function insertAddress($userId, $zip, $street, $city, $state){
         try{
-            $addressStmt = "INSERT INTO Address(userId, zip, street, city, state) VALUES (:userId, :zip, :street, :city, :state)";
+            $addressStmt = "INSERT INTO Address(userId, zip, street, city, state) 
+                            VALUES (:userId, :zip, :street, :city, :state)";
             $stmt = $this->dbConnect->prepare($addressStmt);
 
             $stmt->bindValue(':userId', $userId);
@@ -130,7 +134,9 @@ class User{
     }
 
     public function getUserId($firstName, $lastName, $email){
-        $userIdQuery = "SELECT userId FROM User WHERE firstName= ? AND lastName = ? AND email = ?";
+        $userIdQuery = "SELECT userId FROM User 
+                        WHERE firstName= ? 
+                        AND lastName = ? AND email = ?";
         $stmt = $this->dbConnect->prepare($userIdQuery);
         $stmt->execute([$firstName, $lastName, $email]);
         $row = $stmt->fetch();
@@ -138,16 +144,13 @@ class User{
 
         return $userId;
     }
+
+    public function fetchUsers(){
+        $stmt = $this->dbConnect->query("SELECT firstName, lastName FROM User");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }
-
-/**
- *
- */
-
-class Table{
-
-
-}
-
 
 ?>
