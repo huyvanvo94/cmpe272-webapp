@@ -24,6 +24,7 @@ $user->insertAddress($id, "94651", "1013 Park Ave", "New York", "NY");
 
 
 function loadUser($firstName, $lastName, $email, $mobile, $home, $zip, $address, $city, $state){
+	global $user; 
 	$user->insertUser($firstName, $lastName, $email);
 	$id = $user->getUserId($firstName, $lastName, $email);
 	$user->insertPhoneNumber($id, $mobile, $home);
