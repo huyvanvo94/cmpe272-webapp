@@ -1,7 +1,12 @@
 <h1>A web app selling tutoring as services</h1>
 <p>
-Each services has it own page.
+This is a basic web application that is an exercise 
+to handle basic operations and UI design patterns. 
+This project is using the LAMP stack. 
+
 <p></br>
+
+
 
 <h1>Basic Web Design Operations </h1>
 
