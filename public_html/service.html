@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Service</title>
 
-
+    <link rel="stylesheet" type="text/css" href="common.css">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
         *, *:before, *:after {
@@ -22,28 +22,12 @@
             list-style: none;
         }
 
-        ul.subjects{
-            position: absolute;
-            top:0;
-            right:0;
-            margin-top: 0px;
-            list-style: none;
-            float: right;
-            width: 50%;
-        }
-        li.subject{
-            border-width: 1px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-
-        }
         h2 {
             margin: 0 0 30px 0;
         }
 
         .service-description{
             font-size: 25px;
-            background-color: #e8eeef;
             color: #8a97a0;
             width: 50%;
             padding: 10px;
@@ -54,28 +38,17 @@
         }
 
         .title{
-            background-color: #e8eeef;
             color: #8a97a0;
             font-size: 25px;
             width: 40%;
+
             padding: 10px;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-            position: sticky;
         }
 
         .service-container {
-            float: left;
+            margin-top: 50px;
             box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-            position: sticky;
 
-        }
-
-
-        #subjects-services{
-            background-color: #e8eeef;
-            color: #8a97a0;
-            width: 50%;
-            padding: 10px;
         }
 
         div.panel {
@@ -110,7 +83,7 @@
             transition: max-height 0.2s ease-out;
         }
 
-        a{
+        a.click-here{
             margin: 0;
             padding: 0;
             color: #384047;
@@ -118,6 +91,20 @@
     </style>
 </head>
 <body>
+
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="login-admin.html">Login</a> </li>
+            <li><a href="user-choose.html">User</a> </li>
+        </ul>
+    </div>
+</div>
 
 <div class="service-container">
     <h2 class="title">Services</h2>
@@ -129,79 +116,67 @@
     </p>
 
 </div>
-<!--
-// computer science
-define("CS", "cs");
-define("MATHS", "maths");
-define("ARTS", "arts");
-define("ENGL", "english");
-define("FL", "foreign la");
-define("SCIENCE", "science");
-define("MUSIC", "music");
-define("ENG", "engineering");
-define("SPORTS", "sports");
-define("COOKING", "cooking");
--->
+
 <button class="accordion">Computer Science</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 
 </div>
 
 <button class="accordion">Maths</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Arts</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    < <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">English</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Foreign Language</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Science</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Music</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Engineering</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Sports</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    < <a class="click-here" href="#">Click Here</a>
 </div>
 
 <button class="accordion">Cooking</button>
 <div class="panel">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#">Click Here</a>
+    <a class="click-here" href="#">Click Here</a>
 </div>
 <script>
     var acc = document.getElementsByClassName("accordion");

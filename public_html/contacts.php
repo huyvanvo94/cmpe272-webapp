@@ -6,26 +6,18 @@
 
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-        .title{
-
-        }
-        body {
-            background-color: whitesmoke;
-            font-family: "Roboto", sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
 
         textarea{
             resize: none;
         }
 
-        form, div {
+        form#contact-container, div#contact-container {
             max-width: 300px;
             margin: 10px auto;
             padding: 10px 20px;
             background: #f4f7f8;
             border-radius: 8px;
+            margin-top: 50px;
         }
 
         .submit-button{
@@ -50,13 +42,28 @@
 
 
     </style>
+    <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 
 
 
 <body>
 
-<div>
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="login-admin.html">Login</a> </li>
+            <li><a href="user-choose.html">User</a> </li>
+        </ul>
+    </div>
+</div>
+
+<div id="contact-container">
     <h3>Contact Information</h3>
 
     <ul>
@@ -68,17 +75,21 @@
             }
         ?>
     </ul>
-</div>
-<form action="response/form-contact.php" method="post">
-    <h4>Contact Us</h4>
-    <input type="text" name="email-address" placeholder="address"> <br>
 
-    <label>Comments</label><br>
-    <textarea name="message" rows="10" cols="30">
+    <form id="container" action="response/form-contact.php" method="post">
+
+        <h4>Contact Us</h4>
+        <input type="text" name="email-address" placeholder="address"> <br>
+
+        <label>Comments</label><br>
+        <textarea name="message" rows="10" cols="30">
     </textarea><br>
-    <input class="submit-button" type="submit" name="submit" value="Submit">
+        <input class="submit-button" type="submit" name="submit" value="Submit">
 
-</form>
+    </form>
+</div>
+
+
 
 
 </body>
