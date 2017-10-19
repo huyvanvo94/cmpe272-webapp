@@ -3,51 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <title>Service</title>
-    <link rel="stylesheet" type="text/css" href="css/common.css">
+
 
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: "Roboto", sans-serif;
+
+            background-color: #f5feff;
+        }
+        ul{
+            list-style: none;
+        }
+
+        ul.subjects{
+            position: absolute;
+            top:0;
+            right:0;
+            margin-top: 0px;
+            list-style: none;
+            float: right;
+            width: 50%;
+        }
+        li.subject{
+            border-width: 1px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+
+        }
+        h2 {
+            margin: 0 0 30px 0;
+        }
+
+        .service-description{
+            font-size: 25px;
+            background-color: #e8eeef;
+            color: #8a97a0;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .headline{
+            font-size: 25px;
+        }
+
+        .title{
+            background-color: #e8eeef;
+            color: #8a97a0;
+            font-size: 25px;
+            width: 40%;
+            padding: 10px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+            position: sticky;
+        }
+
+        .service-container {
+            float: left;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+            position: sticky;
+
+        }
+
+
+        #subjects-services{
+            background-color: #e8eeef;
+            color: #8a97a0;
+            width: 50%;
+            padding: 10px;
+        }
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        button.accordion.active, button.accordion:hover {
+            background-color: #ccc;
+        }
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        a{
+            margin: 0;
+            padding: 0;
+            color: #384047;
+        }
     </style>
 </head>
 <body>
-<h2 class="headline">Service</h2>
 
-<div id="container-1">
-    <h4 class="headline">Making Selling and Buying easier</h4>
-    <p class="paragraph">
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-    </p>
-    <img style="display: block; margin: auto;"  src="img/service.jpeg" height="183" width="275"/>
+<div class="service-container">
+    <h2 class="title">Services</h2>
 
-</div>
-<div id="container-2">
-    <h4 class="headline">Setting up meet up is done right</h4>
-
-
-    <p class="paragraph">
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </br>
+    <p class="service-description">
+    Here you can you choose from subjects and request a tutor to personally
+    tutor online or in person. We offer many subjects in and our tutors are high
+    qualify for the job.
     </p>
 
-    <img style="display: block; margin: auto;" src="img/google-maps.jpeg" height="150" width="150"/>
 </div>
+<!--
+// computer science
+define("CS", "cs");
+define("MATHS", "maths");
+define("ARTS", "arts");
+define("ENGL", "english");
+define("FL", "foreign la");
+define("SCIENCE", "science");
+define("MUSIC", "music");
+define("ENG", "engineering");
+define("SPORTS", "sports");
+define("COOKING", "cooking");
+-->
+<button class="accordion">Computer Science</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <a href="#">Click Here</a>
+
+</div>
+
+<button class="accordion">Maths</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Arts</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">English</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Foreign Language</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Science</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Music</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Engineering</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Sports</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+
+<button class="accordion">Cooking</button>
+<div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#">Click Here</a>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+    }
+</script>
 
 
 </body>

@@ -19,8 +19,6 @@
 
 <?php
 
-use tables\HTMLTable;
-
 include '../settings.php';
 include 'src/database.php';
 include 'table.php';

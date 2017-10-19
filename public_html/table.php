@@ -1,7 +1,5 @@
 <?php
 
-namespace tables;
-
 interface Table{
 
     function getHTML();

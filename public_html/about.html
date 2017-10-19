@@ -3,8 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>About</title>
+    
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script>
+        
+        $(init);
+        
+        function init() {
+            $(window).resize();
+        }
+        
+        $(window).resize(function(){
+
+            $('.about').css({
+                position:'absolute',
+                left: ($(window).width() - $('.about').outerWidth())/2,
+                top: ($(window).height() - $('.about').outerHeight())/2
+            });
+
+        });
+
+    </script>
+    <style>
+
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            color: #384047;
+            background-color: #e8eeef;
+        }
+
+        p{
+            background-color: #acb2b3;
+            color: white;
+            font-size: 20px;
+            width: 50%;
+            padding: 1.7em;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        .header{
+            font-size: 40px;
+            color: #8a97a0;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .about{
+            margin:0 auto;
+            width: 100%;
+            height:100%;
+        }
+    </style>
 </head>
 <body>
 
+<div class="about">
+    <h3 class="header">Welcome</h3>
+
+    <p>
+        Since 1989 we have been educating students, families and professionals with our tailored,
+        on-site programs. With offices in San Francisco, Los Angeles, Orange County, Phoenix
+        and San Diego, we are one of the leading educational consulting firms in California.
+    </p>
+
+    <p>
+        Today, we are changing how students learn by offering in person
+        and online session for students to learn and group.
+        We offer many subjects to choose from
+    </p>
+
+
+    <p>
+        Today, we continue to fulfill our mission of dedication to making
+        a difference by reaching students, families and professionals
+        throughout California and beyond.
+    </p>
+</div>
 </body>
 </html>

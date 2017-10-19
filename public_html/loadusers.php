@@ -1,5 +1,6 @@
 <?php
 
+
 include 'src/database.php';
 include '../settings.php';
 
@@ -20,7 +21,29 @@ $user->insertUser("Jessica", "Johnson", "Jessica.johnson.@sjsu.edu");
 $id = $user->getUserId("Jessica", "Johnson", "Jessica.johnson.@sjsu.edu");
 $user->insertPhoneNumber($id, "321395489","888454348");
 $user->insertAddress($id, "94651", "1013 Park Ave", "New York", "NY");
-//4 
+//4
+
+loadUser("Sarah", "Smith",
+    "Sarah.smith@sjsu.edu",
+    "5107521212",
+    "1134520909",
+    "42451",
+    "242 Golden St",
+    "Orlando",
+    "FL"
+);
+
+loadUser("Ryan", "Green",
+    "Ryan.green@sjsu.edu",
+    "5107121212",
+    "1134543909",
+    "41451",
+    "242 Park St",
+    "Orlando",
+    "FL"
+);
+
+
 
 
 function loadUser($firstName, $lastName, $email, $mobile, $home, $zip, $address, $city, $state){

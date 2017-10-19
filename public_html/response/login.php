@@ -2,7 +2,6 @@
 
 // Will validate input
 // Validate login admin
-use function utilities\redirect;
 include 'util.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){

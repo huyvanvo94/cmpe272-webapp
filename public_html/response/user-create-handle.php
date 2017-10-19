@@ -4,9 +4,10 @@
  */
 
 define('ROOTPATH', __DIR__);
-include('../../settings.php');
-include('util.php');
+include  '../../settings.php';
 include('../src/database.php');
+include 'util.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($_POST['submit'] == 'Submit'){
         try{
@@ -24,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             // get phone number
             $mobile = $_POST["mobile"];
             $home = $_POST["home"];
-
-            echo $home;
 
             $dbConn = new DbConnect($settings);
             $user = new User($dbConn);

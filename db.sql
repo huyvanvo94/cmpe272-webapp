@@ -1,4 +1,4 @@
-CREATE TABLE User(
+CREATE TABLE Users(
 	userID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	firstName VARCHAR(100),
 	lastName VARCHAR(100),
@@ -12,7 +12,7 @@ CREATE TABLE PhoneNumber(
 	home VARCHAR(100),
 	mobile VARCHAR(100),
 	PRIMARY KEY(numberID),
-	FOREIGN KEY (userID) REFERENCES User(userID)
+	FOREIGN KEY (userID) REFERENCES Users(userID)
 );
 -- Add for Address 
 CREATE TABLE Address(
@@ -23,7 +23,7 @@ CREATE TABLE Address(
   	city          VARCHAR(100),
   	state         VARCHAR(100),
   	PRIMARY KEY (addressID),
-  	FOREIGN KEY (userID) REFERENCES User(userID)
+  	FOREIGN KEY (userID) REFERENCES Users(userID)
 );
 -- Holds ID from User and Address
 CREATE TABLE UserAddress(
@@ -31,4 +31,6 @@ CREATE TABLE UserAddress(
 	addressID INT 
 );
 
- 
+ CREATE TABLE ServiceCount(
+
+ );

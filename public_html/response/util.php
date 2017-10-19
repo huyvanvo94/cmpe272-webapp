@@ -1,6 +1,5 @@
 <?php
-/*Code for utils */
-namespace utilities;
+
 
 function redirect($url, $permanent = false)
 {

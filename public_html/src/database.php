@@ -4,12 +4,10 @@
  * Class DbConnect
  * Class to handle database operations
  */
-
 // Tables
 $USER_TABLE    = "User";
 $PHONE_TABLE   = "PhoneNumber";
 $ADDRESS_TABLE = "Address";
-
 class DbConnect
 {
     private $settings, $pdo;
@@ -18,7 +16,6 @@ class DbConnect
     function __construct($settings)
     {
         $this->settings = $settings;
-
         $this->pdo = new PDO(sprintf(
             'mysql:host=%s;dbname=%s;port=%s;charset=%s',
             $this->settings['host'],
@@ -28,65 +25,49 @@ class DbConnect
         ),
             $this->settings['username'],
             $this->settings['password']
-
         );
-
     }
-
     function createDb(){
         $stmt = $this->pdo->prepare("CREATE DATABASE".$this->settings['name']);
         $stmt->execute();
     }
-
     function __destruct()
     {
         $this->pdo = null;
         $this->settings = null;
     }
-
     // get database connection
     public function getConnection()
     {
         return $this->pdo;
     }
 }
-
 /**
  * Class User
  *
  */
 class User{
-
     private $dbConnect, $userId;
-
     function __construct($dbConnect)
     {
         $this->dbConnect = $dbConnect->getConnection();
     }
-
     public function searchByName($firstName, $lastName){
         $query = "SELECT * FROM User 
                   WHERE firstName = ? AND lastName = ?";
         $stmt = $this->dbConnect->prepare($query);
         $stmt->execute([$firstName, $lastName]);
-
         $users = $stmt->fetch();
         return $users;
     }
-
     public function searchByAddress(){
-
     }
-
     public function searchByNumbers(){
-
     }
-
     public function insertUser($firstName, $lastName, $email){
         try{
             $userInsertStmt = "INSERT INTO User(firstName, lastName, email) 
                               VALUES (:firstName, :lastName, :email)";
-
             $stmt = $this->dbConnect->prepare($userInsertStmt);
             $stmt->bindValue(':firstName', $firstName);
             $stmt->bindValue(':lastName', $lastName);
@@ -97,7 +78,6 @@ class User{
             return false;
         }
     }
-
     public function insertPhoneNumber($userId, $home, $mobile){
         try{
             $numberStmt = "INSERT INTO PhoneNumber(userId, home, mobile) 
@@ -107,32 +87,27 @@ class User{
             $stmt->bindValue(':home', $home);
             $stmt->bindValue(':mobile', $mobile);
             $stmt->execute();
-
             return true;
         }catch (PDOException $e){
             return false;
         }
     }
-
     public function insertAddress($userId, $zip, $street, $city, $state){
         try{
             $addressStmt = "INSERT INTO Address(userId, zip, street, city, state) 
                             VALUES (:userId, :zip, :street, :city, :state)";
             $stmt = $this->dbConnect->prepare($addressStmt);
-
             $stmt->bindValue(':userId', $userId);
             $stmt->bindValue(':zip', $zip);
             $stmt->bindValue(':street', $street);
             $stmt->bindValue(':city', $city);
             $stmt->bindValue(':state', $state);
             $stmt->execute();
-
             return true;
         }catch (PDOException $e){
             return false;
         }
     }
-
     public function getUserId($firstName, $lastName, $email){
         $userIdQuery = "SELECT userId FROM User 
                         WHERE firstName= ? 
@@ -141,10 +116,8 @@ class User{
         $stmt->execute([$firstName, $lastName, $email]);
         $row = $stmt->fetch();
         $userId = $row['userId'];
-
         return $userId;
     }
-
     public function fetchUsers(){
         $stmt = $this->dbConnect->query("SELECT firstName, lastName FROM User");
         $stmt->execute();
@@ -152,5 +125,4 @@ class User{
         return $result;
     }
 }
-
 ?>
