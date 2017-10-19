@@ -16,4 +16,5 @@ This project is using the LAMP stack.
   <li> Database Operations</li>
 </ul>
 
+<p>Link to web page: </p>
 <a href="http://aboringperson.atwebpages.com/">http://aboringperson.atwebpages.com/</a>
