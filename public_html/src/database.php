@@ -66,7 +66,7 @@ class User{
     }
     public function insertUser($firstName, $lastName, $email){
         try{
-            $userInsertStmt = "INSERT INTO User(firstName, lastName, email) 
+            $userInsertStmt = "INSERT INTO Users(firstName, lastName, email) 
                               VALUES (:firstName, :lastName, :email)";
             $stmt = $this->dbConnect->prepare($userInsertStmt);
             $stmt->bindValue(':firstName', $firstName);
@@ -109,7 +109,7 @@ class User{
         }
     }
     public function getUserId($firstName, $lastName, $email){
-        $userIdQuery = "SELECT userId FROM User 
+        $userIdQuery = "SELECT userId FROM Users 
                         WHERE firstName= ? 
                         AND lastName = ? AND email = ?";
         $stmt = $this->dbConnect->prepare($userIdQuery);
@@ -119,7 +119,7 @@ class User{
         return $userId;
     }
     public function fetchUsers(){
-        $stmt = $this->dbConnect->query("SELECT firstName, lastName FROM User");
+        $stmt = $this->dbConnect->query("SELECT firstName, lastName FROM Users");
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
