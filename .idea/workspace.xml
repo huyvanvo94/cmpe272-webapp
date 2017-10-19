@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41751659-b59b-44d8-9d1a-93c8fa514f7e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/user-choose.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/user-table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sql" afterPath="$PROJECT_DIR$/db.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/about.html" afterPath="$PROJECT_DIR$/public_html/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/contacts.php" afterPath="$PROJECT_DIR$/public_html/contacts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.html" afterPath="$PROJECT_DIR$/public_html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/loadusers.php" afterPath="$PROJECT_DIR$/public_html/loadusers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/login-admin.html" afterPath="$PROJECT_DIR$/public_html/login-admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/news.html" afterPath="$PROJECT_DIR$/public_html/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/response/login.php" afterPath="$PROJECT_DIR$/public_html/response/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/response/user-create-handle.php" afterPath="$PROJECT_DIR$/public_html/response/user-create-handle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/response/util.php" afterPath="$PROJECT_DIR$/public_html/response/util.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/service.html" afterPath="$PROJECT_DIR$/public_html/service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/src/CookieManager.php" afterPath="$PROJECT_DIR$/public_html/src/CookieManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/src/database.php" afterPath="$PROJECT_DIR$/public_html/src/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/table.php" afterPath="$PROJECT_DIR$/public_html/table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/test.php" afterPath="$PROJECT_DIR$/public_html/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/user-creation.php" afterPath="$PROJECT_DIR$/public_html/user-creation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/user.php" afterPath="$PROJECT_DIR$/public_html/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/search-user.php" afterPath="$PROJECT_DIR$/public_html/search-user.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,16 +31,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public_html/test.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public_html/user.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -70,11 +41,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="table.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public_html/table.php">
+          <file leaf-file-name="user-creation.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public_html/user-creation.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+                <state relative-caret-position="15">
+                  <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -100,11 +71,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="search-user.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="search-user.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public_html/search-user.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+                <state relative-caret-position="449">
+                  <caret line="107" column="29" lean-forward="false" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -113,8 +84,18 @@
           <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public_html/about.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+                <state relative-caret-position="397">
+                  <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user-choose.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public_html/user-choose.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="16" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -130,7 +111,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="service.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="service.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public_html/service.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="266">
@@ -157,8 +138,8 @@
           <file leaf-file-name="login-admin.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public_html/login-admin.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-961">
-                  <caret line="13" column="9" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
+                <state relative-caret-position="461">
+                  <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -182,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/home.html" />
         <option value="$PROJECT_DIR$/news.html" />
         <option value="$PROJECT_DIR$/contacts.php" />
         <option value="$PROJECT_DIR$/public/contact.html" />
@@ -225,14 +205,15 @@
         <option value="$PROJECT_DIR$/public_html/user.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/public_html/src/database.php" />
-        <option value="$PROJECT_DIR$/public_html/login-admin.html" />
         <option value="$PROJECT_DIR$/public_html/contacts.php" />
-        <option value="$PROJECT_DIR$/public_html/about.html" />
         <option value="$PROJECT_DIR$/public_html/news.html" />
         <option value="$PROJECT_DIR$/public_html/user-choose.html" />
         <option value="$PROJECT_DIR$/public_html/user-creation.php" />
         <option value="$PROJECT_DIR$/public_html/index.html" />
         <option value="$PROJECT_DIR$/public_html/service.html" />
+        <option value="$PROJECT_DIR$/public_html/about.html" />
+        <option value="$PROJECT_DIR$/public_html/login-admin.html" />
+        <option value="$PROJECT_DIR$/public_html/search-user.php" />
       </list>
     </option>
   </component>
@@ -378,12 +359,12 @@
       <workItem from="1508124208514" duration="2935000" />
       <workItem from="1508223596444" duration="5735000" />
       <workItem from="1508296824060" duration="6932000" />
-      <workItem from="1508316718240" duration="15381000" />
+      <workItem from="1508316718240" duration="15900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56420000" />
+    <option name="totallyTimeSpent" value="56939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -588,22 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/user-choose.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/user-creation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1066">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -612,26 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/login-admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-961">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="56" column="99" lean-forward="false" selection-start-line="56" selection-start-column="99" selection-end-line="56" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/search-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -660,30 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/user-result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/user-table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/contacts.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -704,6 +629,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="155" column="30" lean-forward="false" selection-start-line="155" selection-start-column="30" selection-end-line="155" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/user-choose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/user-creation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/user-result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/user-table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/login-admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/search-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="107" column="29" lean-forward="false" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
           <folding />
         </state>
       </provider>
