@@ -6,8 +6,6 @@ This project is using the LAMP stack.
 
 <p></br>
 
-
-
 <h1>Basic Web Design Operations </h1>
 
 <ul>
@@ -17,4 +15,4 @@ This project is using the LAMP stack.
 </ul>
 
 <p>Link to web page: </p>
-<a href="http://aboringperson.atwebpages.com/">http://aboringperson.atwebpages.com/</a>
+<a href="http://huyvanvo94.com/">http://huyvanvo94.com/</a>

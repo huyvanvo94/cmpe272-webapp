@@ -18,10 +18,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 
+/**
+ * @param $username
+ * @param $password
+ * @return bool
+ */
 function isValid($username, $password){
+    $textFile = file("../../password.txt", FILE_IGNORE_NEW_LINES);
+    $theUserName = $textFile[0];
+    $thePassword = $textFile[1];
+    
 
+    if($username === $theUserName & $password === $thePassword){
+        return true;
+    }
 
-    return true;
+    return false;
+}
+
+function onLoad(){
+
 }
 
 ?>

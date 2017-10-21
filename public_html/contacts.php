@@ -66,31 +66,28 @@
 <div id="contact-container">
     <h3>Contact Information</h3>
 
+
     <ul>
         <?php
             $fileName = "contacts.txt";
-            $contactsList = file($fileName, FILE_IGNORE_NEW_LINES);
+            $contactsList = file($fileName);
             for($i = 0; $i < count($contactsList); $i++){
-                echo "<li>$contactsList[$i] </li>";
+                echo "<li>$contactsList[$i]</li>";
             }
         ?>
     </ul>
 
-    <form id="container" action="response/form-contact.php" method="post">
+    <form id="container" action="#" method="post">
 
         <h4>Contact Us</h4>
         <input type="text" name="email-address" placeholder="address"> <br>
 
         <label>Comments</label><br>
         <textarea name="message" rows="10" cols="30">
-    </textarea><br>
+        </textarea><br>
         <input class="submit-button" type="submit" name="submit" value="Submit">
 
     </form>
 </div>
-
-
-
-
 </body>
 </html>
