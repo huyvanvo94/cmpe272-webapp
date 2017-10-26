@@ -1,7 +1,5 @@
 <?php
-
-// Will validate input
-// Validate login admin
+session_start();
 include 'util.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -9,35 +7,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if(isValid($username, $password)){
-            redirect("../user.php");
-        }else{
-            echo "<h1>Unauthorized access!</h1>";
+        validate($username, $password);
+    }
+}
+/*Function to validate inputs. Will print error if incorrect password or username*/
+function validate($username, $password){
+    $textFile = file("../../password.txt", FILE_IGNORE_NEW_LINES);
+    $theUserName = $textFile[0];
+    $thePassword = $textFile[1];
 
-        }
+    if($theUserName != $username || $thePassword != $password){
+        echo "<h1>Error. Username or password does not match!</h1>";
+    } else{
+
+        $_SESSION['username'] = $theUserName;
+        $_SESSION['password'] = $thePassword;
+        redirect("../user.php");
     }
 }
 
-/**
- * @param $username
- * @param $password
- * @return bool
- */
+
 function isValid($username, $password){
     $textFile = file("../../password.txt", FILE_IGNORE_NEW_LINES);
     $theUserName = $textFile[0];
     $thePassword = $textFile[1];
-    
 
-    if($username === $theUserName & $password === $thePassword){
+    if($username === $theUserName && $password === $thePassword){
         return true;
     }
 
     return false;
 }
 
-function onLoad(){
-
+function isValidPassword($password){
+    $textFile = file("../../password.txt", FILE_IGNORE_NEW_LINES);
+    return $textFile[1] == $password;
 }
 
 ?>

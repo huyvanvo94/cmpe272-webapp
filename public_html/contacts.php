@@ -43,12 +43,15 @@
 
     </style>
     <link rel="stylesheet" type="text/css" href="common.css">
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+
+    </script>
 </head>
 
 
 
 <body>
-
 <div id="nav">
     <div id="nav-wrapper">
         <ul>

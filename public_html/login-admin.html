@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login Admin</title>
     <link rel="stylesheet" type="text/css" href="common.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
     <style>
 
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -94,6 +95,10 @@
             color: #EF3B3A;
         }
 
+        .error{
+            border: 5px solid red;
+        }
+
         body {
             background-color: whitesmoke;
             font-family: "Roboto", sans-serif;
@@ -101,10 +106,46 @@
             -moz-osx-font-smoothing: grayscale;
         }
     </style>
+
+
+
+    <script>
+
+        $(init);
+
+        function init() {
+            var searchParams = new URLSearchParams(window.location.search);
+            var value = searchParams.get("v");
+            if(value){
+                alert("Invalid user name or password");
+            }
+
+        }
+
+        /*Check if users just entered blank spaces only.*/
+        function validate() {
+
+            var username = document.getElementById("username");
+
+            if(!username.value.trim()){
+                alert("please enter your username");
+                return false;
+            }
+
+            var password = document.getElementById("password");
+
+            if(!password.value.trim()){
+                alert("please enter a password");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
 
-<!-- A simple web page for admin login.-->
+<!-- A very simple web page for admin login.-->
 
 <div id="nav">
     <div id="nav-wrapper">
@@ -119,14 +160,12 @@
         </ul>
     </div>
 </div>
+
 <div class="login-page">
-
-    <form class="form" action="response/login.php" method="post">
-
-        <input type="text" name="username" placeholder="id"><br>
-        <input type="password" name="password" placeholder="password"><br>
+    <form onsubmit="return validate();" class="form" action="response/login.php" method="post">
+        <input id="username" type="text" name="username" placeholder="username" required><br>
+        <input id="password" type="password" name="password" placeholder="password" required><br>
         <input type="submit" name="submit" value="Submit">
-
     </form>
 </div>
 

@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <title>New User</title>
 
-    <script>
-        // validate inputs
+    <script src="js/jquery-ui.min.js"></script>
 
+    <script>
+        $(init);
+
+        function init() {
+            var options = {
+                types: ['(cities)'],
+                componentRestrictions: {country: "us"}
+            };
+
+            var input = document.getElementsByName("city")[0];
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+        }
     </script>
 
     <style>
@@ -101,24 +112,69 @@
             -moz-osx-font-smoothing: grayscale;
         }
     </style>
+
+    <script>
+
+
+        
+        function validate() {
+            var firstName = document.getElementsByName("firstName")[0].value;
+
+            if(!firstName.match(/^([^0-9]*)$/)){
+                alert("Name can only contain letters");
+                return false;
+            }
+
+            var lastName = document.getElementsByName("lastName")[0].value;
+
+            if(!lastName.match(/^([^0-9]*)$/)){
+                alert("Name can only contain letters");
+                return false;
+            }
+
+            var email = document.getElementsByName("email")[0].value;
+
+            if (!email.match(/^.+@.+\..{2,4}$/)) {
+                alert("Email should match the pattern: name@domain.com");
+                return false;
+            }
+
+            var zip = document.getElementsByName("zip")[0].value;
+            if(!zip.match(/^[0-9]*$/)){
+                alert("zip must contains numbers only");
+                return false;
+            }
+
+
+            /**
+             *
+             * /^\(\d{3}\)\d{7}/
+             */
+
+            var phoneRE = /^\(\d{3}\)\d{3}-\d{4}$/;
+
+            return true;
+        }
+    </script>
+
 </head>
 <body>
 
 <div class="form-container">
     <!--Will validate soon -->
 
-    <form class="form" method="post" action="response/user-create-handle.php">
+    <form onsubmit="return validate();" class="form" method="post" action="response/user-create-handle.php">
         <h1>New User</h1>
-        <input type="text" name="firstName" placeholder="first name"> <br>
-        <input type="text" name="lastName" placeholder="last name"><br>
-        <input type="text" name="email" placeholder="email address"><br>
+        <input type="text" name="firstName" placeholder="first name" required> <br>
+        <input type="text" name="lastName" placeholder="last name" required><br>
+        <input type="text" name="email" placeholder="email address" required><br>
 
-        <input type="text" name="mobile" placeholder="mobile phone number"><br>
-        <input type="text" name="home" placeholder="home phone number"><br>
-        <input type="text" name="zip" placeholder="zip code"><br>
-        <input type="text" name="street" placeholder="address"><br>
-        <input type="text" name="city" placeholder="city"><br>
-        <input type="text" name="state" placeholder="state"><br>
+        <input type="text" name="mobile" placeholder="mobile phone number" required><br>
+        <input type="text" name="home" placeholder="home phone number" required><br>
+        <input maxlength="5" type="tel" name="zip" placeholder="zip code" required><br>
+        <input type="text" name="street" placeholder="address" required><br>
+        <input type="text" name="city" placeholder="city" required><br>
+        <input type="text" name="state" placeholder="state" required><br>
         <input type="submit" name="submit" value="Submit">
 
     </form>

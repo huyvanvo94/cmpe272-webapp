@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $user->insertPhoneNumber($userId, $home, $mobile);
                 $user->insertAddress($userId, $zip, $street, $city, $state);
             }
-            header('Location: ' . '../user-creation.php');
+            header('Location: ' . '../user-creation.html');
 
         }catch (PDOException $e){
             // redirect to error page
