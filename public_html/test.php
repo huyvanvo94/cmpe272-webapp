@@ -1,12 +1,9 @@
 <?php
 
+include "src/cookies.php";
 
-function setTimerCookie($key){
-    setcookie($key, time(), time() + (86400 * 30), "/");
+foreach ($_COOKIE as $x=>$y){
+
+   echo $y."<br>";
 }
-
-setTimerCookie("hello");
-
-echo time() - $_COOKIE["hello"];
-
 ?>
