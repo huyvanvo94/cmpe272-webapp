@@ -1,5 +1,4 @@
 <?php
-namespace coookie;
 
 define("TRACKER", "track");
 // computer science
@@ -16,6 +15,18 @@ define("COOKING", "cooking");
 
 function setTimerCookie($key){
     setcookie($key, time(), time() + (86400 * 30), "/");
+}
+
+function clearCookie($key){
+    setcookie($key, "", time()-3600);
+}
+
+function clearAllCookie(){
+
+}
+
+function getFiveMostViewItems(){
+
 }
 
 function getFivePreviouslyViewItems(){

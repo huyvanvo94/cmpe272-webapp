@@ -32,5 +32,7 @@ CREATE TABLE UserAddress(
 );
 
  CREATE TABLE ServiceCount(
-
+	 serviceId INT UNSIGNED NOT NULL  AUTO_INCREMENT,
+	 service VARCHAR(50),
+	 count INT
  );

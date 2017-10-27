@@ -125,4 +125,12 @@ class User{
         return $result;
     }
 }
+
+class ServiceCount{
+    private $dbConnect;
+    function __construct($dbConnect)
+    {
+        $this->dbConnect = $dbConnect->getConnection();
+    }
+}
 ?>

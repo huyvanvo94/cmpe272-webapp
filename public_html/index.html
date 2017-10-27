@@ -4,11 +4,12 @@
    <meta charset="UTF-8">
    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="common.css">
-    <script src="js/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
+
+        var show = false;
+
 
     </script>
 
@@ -30,15 +31,42 @@
             <li><a href="about.html">About</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="contacts.php">Contacts</a></li>
-            <li><a href="service.html">Service</a></li>
+
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Service
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="service.html">About Service</a>
+                        <a href="#">Most View Service</a>
+                        <a href="#">Recently Views Service</a>
+                    </div>
+                </div>
+            </li>
+
+
             <li><a href="login-admin.html">Login</a> </li>
             <li><a href="user-choose.html">User</a> </li>
         </ul>
     </div>
 </div>
 
-<div class="main-container">
-    <img class="main-image" src="img/tutoring.jpg" height="458" width="975"/>
+
+
+<div id="side-bar">
+    <ul id="service-list">
+        <li class="service"><a href="services/computer-science-service.html"> Computer Science</a></li>
+        <li class="service"><a href="services/maths-service.html">Maths</a></li>
+        <li class="service"><a href="services/arts-service.html">Arts</a></li>
+        <li class="service"><a href="services/english-service.html"> English</a></li>
+        <li class="service"><a href="services/foreign-language-service.html">Foreign Language</a> </li>
+        <li class="service"><a href="services/science-service.html">Science</a> </li>
+        <li class="service"><a href="services/music-service.html"> Music</a></li>
+        <li class="service"><a href="services/engineering-service.html">Engineering</a> </li>
+        <li class="service"><a href="services/sports-service.html"> Sports</a></li>
+        <li class="service"><a href="services/cooking-service.html">Cooking</a></li>
+    </ul>
 </div>
 
 </body>

@@ -24,6 +24,10 @@ ul {
     margin: 0px auto;
     text-align: left;
 }
+
+#nav-wrapper > li{
+    padding: 10px;
+}
 #nav ul {
     list-style-type: none;
     padding: 0px;
@@ -40,4 +44,72 @@ ul {
     padding: 10px;
     color:white;
     text-decoration: none;
+}
+
+
+#service-list{
+    list-style:none;
+    margin-top: 50px;
+    padding: 0;
+    width: 11%;
+    background-color: #52809f;
+
+}
+
+#service-list a{
+    color: white;
+    text-decoration: none;
+
+}
+
+li > a{
+}
+
+.service{
+    background-color: #bec4c5;
+    padding: 16px;
+
+}
+
+#service-list a:hover{
+    background-color: #d4dadb;
+}
+
+
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #b3b9ba;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
