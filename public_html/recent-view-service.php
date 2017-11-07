@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<h1 id="title">Last Five Previously Visited Service</h1>
+<h1 id="title">Last Five Recently Visited Service</h1>
 
 
 <?php
