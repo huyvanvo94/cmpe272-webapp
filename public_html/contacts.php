@@ -52,19 +52,7 @@
 
 
 <body>
-<div id="nav">
-    <div id="nav-wrapper">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="contacts.php">Contacts</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="login-admin.html">Login</a> </li>
-            <li><a href="user-choose.html">User</a> </li>
-        </ul>
-    </div>
-</div>
+ 
 
 <div id="contact-container">
     <h3>Contact Information</h3>

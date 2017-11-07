@@ -8,17 +8,15 @@
 
     <script>
 
-        var show = false;
-
-
     </script>
 
     <style>
         .main-container{
             position: absolute;
-            top: 50%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: -1;
         }
     </style>
 </head>
@@ -31,28 +29,14 @@
             <li><a href="about.html">About</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="contacts.php">Contacts</a></li>
-
-            <li>
-                <div class="dropdown">
-                    <button class="dropbtn">Service
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="service.html">About Service</a>
-                        <a href="local-most-view-service.php">Most View Service</a>
-                        <a href="recent-view-service.php">Recently Views Service</a>
-                    </div>
-                </div>
-            </li>
-
-
-            <li><a href="login-admin.html">Login</a> </li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="login-admin.html">Secure</a> </li>
             <li><a href="user-choose.html">User</a> </li>
         </ul>
     </div>
 </div>
 
-
+<img class="main-container" src="img/tutoring.jpg" height="458" width="975">
 
 <div id="side-bar">
     <ul id="service-list">
@@ -68,6 +52,9 @@
         <li class="service"><a href="services/cooking-service.php">Cooking</a></li>
     </ul>
 </div>
+
+
+
 
 </body>
 </html>

@@ -89,9 +89,12 @@ function getFiveMostViewItems(){
     }
 
 
-    arsort($list);
+    asort($list);
 
-    return $list;
+    if(count($list) <= 5){
+        return $list;
+    }
+    return array_slice($list, 0, 5);
 }
 
 function getFivePreviouslyViewItems(){
@@ -142,28 +145,9 @@ function getFivePreviouslyViewItems(){
 
     asort($list);
 
-    if(count($list) < 5){
+    if(count($list) <= 5){
         return $list;
     }
     return array_slice($list, 0, 5);
 }
-
-class CookieManager{
-
-    function __construct()
-    {
-    }
-
-    public function track(){
-        if(!isset($_COOKIE[TRACKER])){
-            setcookie(TRACKER, "1", time() + (86400 * 30), "/");
-        }
-    }
-
-    public function getTracker(){
-
-    }
-
-}
-
 ?>

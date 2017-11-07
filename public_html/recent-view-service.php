@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Recent View</title>
+
+    <style>
+        #title{
+            color: #1768b4;
+
+        }
+        #last-five-view{
+            font-size: 25px;
+        }
+    </style>
 </head>
 <body>
 
-<p>Last Five Previously Visited Service</p>
+<h1 id="title">Last Five Previously Visited Service</h1>
 
-<ul id="five-view">
+
 <?php
 include 'src/cookies.php';
 
 $data = getFivePreviouslyViewItems();
-foreach ($data as $key => $value){
-    echo "<li>$key viewed $value millis ago </li>";
+if(empty($data)){
+    echo "<h1>No Service Was Viewed!</h1>";
 }
+
+echo "<ol id=\"last-five-view\">";
+foreach ($data as $key => $value){
+
+    echo "<li>$key </li>";
+}
+
+echo "</ol>";
 ?>
-</ul>
+
 </body>
 </html>
 
