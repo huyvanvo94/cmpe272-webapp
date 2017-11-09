@@ -7,8 +7,6 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <style>
 
-        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
         .login-page {
             width: 360px;
             padding: 8% 0 0;
@@ -101,7 +99,7 @@
 
         body {
             background-color: whitesmoke;
-            font-family: "Roboto", sans-serif;
+            font-family: sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -146,6 +144,19 @@
 <body>
 
 <!-- A very simple web page for admin login.-->
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="login-admin.html">Secure</a> </li>
+            <li><a href="user-choose.html">User</a> </li>
+        </ul>
+    </div>
+</div>
 
 <div class="login-page">
     <form onsubmit="return validate();" class="form" action="response/login.php" method="post">

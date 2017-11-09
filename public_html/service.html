@@ -19,10 +19,16 @@
 
             background-color: #f5feff;
         }
-        ul{
+        #services-list{
             list-style: none;
+            padding-left: 0;
+
+
         }
 
+        #services-list li{ 
+            margin-bottom: 50px;
+        }
         h2 {
             margin: 0 0 30px 0;
         }
@@ -52,37 +58,6 @@
 
         }
 
-        div.panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
-        button.accordion {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-
-        button.accordion.active, button.accordion:hover {
-            background-color: #ccc;
-        }
-
-        div.panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
 
         a.click-here{
             margin: 0;
@@ -97,13 +72,26 @@
 </head>
 <body>
 
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="login-admin.html">Secure</a> </li>
+            <li><a href="user-choose.html">User</a> </li>
+        </ul>
+    </div>
+</div>
 
 <div class="service-container">
 
-    <a href="local-most-view-service.php">Five Most View Service</a>
-    <a href="recent-view-service.php">Last Five Recently View Service</a>
     <h2 class="title">Services</h2>
 
+    <a href="local-most-view-service.php">Five Most View Services</a>
+    <a href="recent-view-service.php">Last Five Recently View Services</a>
     <p class="service-description">
     Here you can you choose from subjects and request a tutor to personally
     tutor online or in person. We offer many subjects in and our tutors are high
@@ -112,111 +100,140 @@
 
 </div>
 
-<button class="accordion">Computer Science</button>
-<div class="panel">
-    <p>
-        This tutoring service is for students enjoy computer programming and is looking
-        to accelerate in it. This service can be done online or in person. We offer help in many
-        areas of computer science and computer programming with many languages.
-    </p>
+<ul id="services-list">
+
+    <li>
+        <div class="panel">
+
+            <h4>Computer Science</h4>
+
+            <img style="float: left;" src="img/cs.jpg" height="100" width="100">
+            <p>
+                This tutoring service is for students enjoy computer programming and is looking
+                to accelerate in it. This service can be done online or in person. We offer help in many
+                areas of computer science and computer programming with many languages.
+            </p>
+            <a class="click-here" href="services/computer-science-service.php">Click Here to Book</a>
+
+        </div>
+    </li>
 
 
-    <a class="click-here" href="services/computer-science-service.php">Click Here to Book</a>
+    <li>
 
-</div>
+        <div class="panel">
+            <h4>Maths</h4>
+            <img src="img/math.jpeg" height="100" width="100" style="float: left;">
+            <p>
+                We offer help for all areas of mathematics. It is hard subject and we believe
+                we know how to help students of all ages get good grades in class.
+                This service is offer online and in person.
+            </p>
 
-<button class="accordion">Maths</button>
-<div class="panel">
-    <p>
-        We offer help for all areas of mathematics. It is hard subject and we believe
-        we know how to help students of all ages get good grades in class.
-        This service is offer online and in person.
-    </p>
+            <a class="click-here" href="services/maths-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-    <a class="click-here" href="services/maths-service.php">Click Here to Book</a>
-</div>
 
-<button class="accordion">Arts</button>
-<div class="panel">
-    <p>This tutoring service for students and individuals who have a love of arts.
-        Students who book this popular services will be provided with art materials and a mentor.</p>
-    <a class="click-here" href="services/arts-service.php">Click Here to Book</a>
-</div>
+    <li>
+        <div class="panel">
+            <h4>Arts</h4>
+            <img src="img/art.jpg" height="100" width="100" style="float: left;">
+            <p>This tutoring service for students and individuals who have a love of arts.
+                Students who book this popular services will be provided with art materials and a mentor.</p>
+            <a class="click-here" href="services/arts-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-<button class="accordion">English</button>
-<div class="panel">
-    <p>This service is great for anyone having a hard time in English class. We offer this online or in person.
-        We can help with reading, writing, and english comprehension.</p>
-    <a class="click-here" href="services/english-service.php">Click Here to Book</a>
-</div>
+    <li>
+        <div class="panel">
+            <h4>English</h4>
+            <img src="img/english.jpeg" height="100" width="100" style="float: left;">
+            <p>
+                This service is great for anyone having a hard time in English class. We offer this online or in person.
+                We can help with reading, writing, and english comprehension.
+            </p>
+            <a class="click-here" href="services/english-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-<button class="accordion">Foreign Language</button>
-<div class="panel">
-    <p>We currently only offer services in French and Spanish.
-        Our service can we done online or in person.
-        Our tutors are highly trained and tune to finding the area you need help in.</p>
-    <a class="click-here" href="services/foreign-language-service.php">Click Here to Book</a>
-</div>
+    <li>
 
-<button class="accordion">Science</button>
-<div class="panel">
-    <p>We offer tutoring in Chem, Physics, and Biology.
-        Come to our service or online for help.
-        We believe that any one can achieve academic success in hard science.</p>
-    <a class="click-here" href="services/science-service.php">Click Here to Book</a>
-</div>
+        <div class="panel">
+            <h4>Foreign Language</h4>
+            <img src="img/fl.jpeg" height="100" width="100" style="float: left;">
+            <p>We currently only offer services in French and Spanish.
+                Our service can we done online or in person.
+                Our tutors are highly trained and tune to finding the area you need help in.</p>
+            <a class="click-here" href="services/foreign-language-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-<button class="accordion">Music</button>
-<div class="panel">
-    <p>We service in many areas of music.
-        Please come to class with your instrument.
-        Our tutors are highly qualify for teaching music.</p>
-    <a class="click-here" href="services/music-service.php">Click Here to Book</a>
-</div>
+    <li>
+        <div class="panel">
+            <h4 >Science </h4>
 
-<button class="accordion">Engineering</button>
-<div class="panel">
-    <p>We offer this tutoring services to anyone looking to learn more about this field of knowledge.
-        Our institution offer all branches of engineering.
-        We provide the resources and any materials needed.</p>
-    <a class="click-here" href="services/engineering-service.php">Click Here to Book</a>
-</div>
+            <img src="img/science.jpg" height="100" width="100" style="float: left;">
+            <p>We offer tutoring in Chem, Physics, and Biology.
+                Come to our service or online for help.
+                We believe that any one can achieve academic success in hard science.</p>
+            <a class="click-here" href="services/science-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-<button class="accordion">Sports</button>
-<div class="panel">
-    <p>
-        While this is not a tutoring service,
-        we provide this service because we believe
-        in having an active life style.
-        Come to one of areas for games in football, soccer, and basketball.
-        We offer gyms or areas for enough spaces for your activities. Bring your gear and get ready for fun.</p>
-    <a class="click-here" href="services/sports-service.php">Click Here to Book</a>
-</div>
+    <li>
+        <div class="panel">
+            <h4>Music</h4>
+            <img src="img/music.jpeg" height="100" width="100" style="float: left;">
+            <p>We service in many areas of music.
+                Please come to class with your instrument.
+                Our tutors are highly qualify for teaching music.</p>
+            <a class="click-here" href="services/music-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-<button class="accordion">Cooking</button>
-<div class="panel">
-    <p>Cooking is a fun experience and can be enjoy by anyone.
-        At our institution,
-        we offer this service for all ages.
-        We provide the materials and anything need for this service.</p>
-    <a class="click-here" href="services/cooking-service.php"> Click Here to Book</a>
-</div>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+    <li>
+        <div class="panel">
+            <h4>Engineering</h4>
+            <img src="img/engineering.jpg" height="100" width="100" style="float: left;">
+            <p>We offer this tutoring services to anyone looking to learn more about this field of knowledge.
+                Our institution offer all branches of engineering.
+                We provide the resources and any materials needed.</p>
+            <a class="click-here" href="services/engineering-service.php">Click Here to Book</a>
+        </div>
+    </li>
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight){
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        }
-    }
-</script>
+    <li>
+
+        <div class="panel">
+            <h4>Sports</h4>
+            <img src="img/sports.jpg" height="100" width="100" style="float: left;">
+            <p>
+                While this is not a tutoring service,
+                we provide this service because we believe
+                in having an active life style.
+                Come to one of areas for games in football, soccer, and basketball.
+                We offer gyms or areas for enough spaces for your activities. Bring your gear and get ready for fun.</p>
+            <a class="click-here" href="services/sports-service.php">Click Here to Book</a>
+        </div>
+    </li>
+
+    <li>
+
+        <h4>Cooking</h4>
+        <div class="panel">
+            <img src="img/cooking.jpg" height="100" width="100" style="float: left;">
+            <p>Cooking is a fun experience and can be enjoy by anyone.
+                At our institution,
+                we offer this service for all ages.
+                We provide the materials and anything need for this service.</p>
+            <a class="click-here" href="services/cooking-service.php"> Click Here to Book</a>
+        </div>
+    </li>
+</ul>
+
+
+
 
 
 </body>
