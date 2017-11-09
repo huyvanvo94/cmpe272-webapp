@@ -89,7 +89,7 @@ function getFiveMostViewItems(){
     }
 
 
-    asort($list);
+    arsort($list);
 
     if(count($list) <= 5){
         return $list;

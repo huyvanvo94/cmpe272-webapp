@@ -12,7 +12,7 @@ setCountCookie(MATHS_COUNT);
     <link rel="stylesheet" type="text/css" href="service.css">
 </head>
 <body>
-<<h3 id="title">Mathematics</h3>
+<h3 id="title">Mathematics</h3>
 
 
 <h4 id="description">Description:</h4>
@@ -24,7 +24,7 @@ setCountCookie(MATHS_COUNT);
     </p>
 
     <p>
-        Mathematicians seek out patterns[8][9] and use them to formulate new conjectures.
+        Mathematicians seek out patterns[and use them to formulate new conjectures.
         Mathematicians resolve the truth or falsity of conjectures by mathematical proof.
         When mathematical structures are good models of real phenomena, then mathematical
         reasoning can provide insight or predictions about nature.
