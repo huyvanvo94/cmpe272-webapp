@@ -3,6 +3,9 @@ include '../src/cookies.php';
 
 setTimerCookie(MUSIC);
 setCountCookie(MUSIC_COUNT);
+
+setCookieCounting(T_MUSIC);
+setCookieTiming(T_MUSIC);
 ?>
 
 <!DOCTYPE html>

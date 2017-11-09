@@ -3,6 +3,8 @@ include '../src/cookies.php';
 
 setTimerCookie(COOKING);
 setCountCookie(COOKING_COUNT);
+setCookieCounting(T_COOK);
+setCookieTiming(T_COOK);
 ?>
 <!DOCTYPE html>
 <html lang="en">

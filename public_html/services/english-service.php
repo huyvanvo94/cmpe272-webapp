@@ -3,6 +3,8 @@ include '../src/cookies.php';
 
 setTimerCookie(ENGL);
 setCountCookie(ENGL_COUNT);
+setCookieCounting(T_ENGLISH);
+setCookieTiming(T_ENGLISH);
 ?>
 
 

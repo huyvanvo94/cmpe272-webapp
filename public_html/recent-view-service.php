@@ -22,18 +22,34 @@
 <?php
 include 'src/cookies.php';
 
-$data = getFivePreviouslyViewItems();
-if(empty($data)){
-    echo "<h1>No Service Was Viewed!</h1>";
+tDisplayFivePreviouslyViewItems();
+
+function tDisplayFivePreviouslyViewItems(){
+    $list = fetchFiveLastView();
+    if($list != -1){
+        echo "<ol id=\"last-five-view\">";
+
+        foreach ($list as $key => $value){
+            echo "<li>$key </li>";
+        }
+
+        echo "</ol>";
+    }else{
+        echo "<h1>No Service Was Viewed!</h1>";
+    }
 }
 
-echo "<ol id=\"last-five-view\">";
-foreach ($data as $key => $value){
-
-    echo "<li>$key </li>";
+function displayFivePreviouslyViewItems(){
+    $data = getFivePreviouslyViewItems();
+    if(empty($data)){
+        echo "<h1>No Service Was Viewed!</h1>";
+    }
+    echo "<ol id=\"last-five-view\">";
+    foreach ($data as $key => $value){
+        echo "<li>$key </li>";
+    }
+    echo "</ol>";
 }
-
-echo "</ol>";
 ?>
 
 </body>

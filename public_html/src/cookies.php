@@ -44,10 +44,7 @@ function setCookieCounting($key){
         $obj->{$key} += 1;
         $jsonize = json_encode($obj);
         setcookie(TRACK_COUNT, $jsonize, time() + (86400 * 30), "/");
-
     }else{
-        // create array
-        // set all value to zero
         $arr = array(
             "Computer Science" => 0,
             "Mathematics" => 0,
@@ -61,9 +58,45 @@ function setCookieCounting($key){
             "Cooking" => 0,
         );
 
+        $arr[$key] += 1;
+
         $jsonize = json_encode($arr);
         setcookie(TRACK_COUNT, $jsonize, time() + (86400 * 30), "/");
     }
+
+}
+
+function setCookieTiming($key){
+
+    if(isset($_COOKIE[TRACK_TIME])){
+        $obj = json_decode($_COOKIE[TRACK_TIME]);
+        $obj->{$key} = time();
+        // put back
+        $jsonize = json_encode($obj);
+        setcookie(TRACK_TIME, $jsonize, time() + (86400 * 30), "/");
+    }else{
+
+        // create array
+        // set all value to -1
+        $arr = array(
+            "Computer Science" => -1,
+            "Mathematics" => -1,
+            "Arts" => -1,
+            "English" => -1,
+            "Foreign Language" => -1,
+            "Sciences"=>-1,
+            "Music" => -1,
+            "Engineering" => -1,
+            "Sports" => -1,
+            "Cooking" => -1,
+        );
+
+        $arr[$key] = time();
+        $jsonize = json_encode($arr);
+        setcookie(TRACK_TIME, $jsonize, time() + (86400 * 30), "/");
+    }
+
+
 }
 
 function fetchFiveMostViewed(){
@@ -71,7 +104,9 @@ function fetchFiveMostViewed(){
         $obj = json_decode($_COOKIE[TRACK_COUNT]);
         $list = array();
         foreach ($obj as $key=>$value){
-            $list[$key] = $value;
+            if ($value != 0){
+                $list[$key] = $value;
+            }
         }
 
         if(count($list) != 0){
@@ -86,6 +121,7 @@ function fetchFiveMostViewed(){
         }
 
     }
+
 
     return -1;
 
@@ -117,35 +153,7 @@ function fetchFiveLastView(){
 
     return -1;
 }
-function setCookieTiming($key){
-    if(isset($_COOKIE[TRACK_TIME])){
-        $obj = json_decode($_COOKIE[TRACK_TIME]);
 
-        $obj->{$key} = time();
-        // put back
-        $jsonize = json_encode($obj);
-        setcookie(TRACK_TIME, $jsonize, time() + (86400 * 30), "/");
-
-    }else{
-        // create array
-        // set all value to -1
-        $arr = array(
-            "Computer Science" => -1,
-            "Mathematics" => -1,
-            "Arts" => -1,
-            "English" => -1,
-            "Foreign Language" => -1,
-            "Sciences"=>-1,
-            "Music" => -1,
-            "Engineering" => -1,
-            "Sports" => -1,
-            "Cooking" => -1,
-        );
-
-        $jsonize = json_encode($arr);
-        setcookie(TRACK_TIME, $jsonize, time() + (86400 * 30), "/");
-    }
-}
 
 function setCountCookie($key){
     if(isset($_COOKIE[$key])){

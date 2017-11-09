@@ -3,6 +3,8 @@ include '../src/cookies.php';
 
 setTimerCookie(SPORTS);
 setCountCookie(SPORTS_COUNT);
+setCookieCounting(T_SPORTS);
+setCookieTiming(T_SPORTS);
 ?>
 
 <!DOCTYPE html>

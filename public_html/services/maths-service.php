@@ -3,6 +3,8 @@ include '../src/cookies.php';
 
 setTimerCookie(MATHS);
 setCountCookie(MATHS_COUNT);
+setCookieCounting(T_MATH);
+setCookieTiming(T_MATH);
 ?>
 
 <!DOCTYPE html>

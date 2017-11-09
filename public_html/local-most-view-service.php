@@ -25,16 +25,34 @@
 
 include "src/cookies.php";
 
-$data = getFiveMostViewItems();
-if(empty($data)){
-    echo "<h1>No Service Was Viewed!</h1>";
+tDisplayFiveMostViewed();
+
+function tDisplayFiveMostViewed(){
+    $list = fetchFiveMostViewed();
+
+    if($list != -1){
+
+        echo "<ol id=\"most-view-list\">";
+        foreach ($list as $key=>$value){
+            echo "<li class='info'>$key Service (View $value times)</li>";
+        }
+        echo "</ol>";
+    }else{
+        echo "<h1>No Service Was Viewed!</h1>";
+    }
 }
 
-echo "<ol id=\"most-view-list\">";
-foreach ($data as $key => $value){
-    echo "<li class='info'>$key Service (View $value times)</li>";
+function displayFiveMostViewed(){
+    $data = getFiveMostViewItems();
+    if(empty($data)){
+        echo "<h1>No Service Was Viewed!</h1>";
+    }
+    echo "<ol id=\"most-view-list\">";
+    foreach ($data as $key => $value){
+        echo "<li class='info'>$key Service (View $value times)</li>";
+    }
+    echo "</ol>";
 }
-echo "</ol>";
 ?>
 
 
