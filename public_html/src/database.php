@@ -53,12 +53,31 @@ class User{
         $this->dbConnect = $dbConnect->getConnection();
     }
     public function searchByName($firstName, $lastName){
-        $query = "SELECT * FROM User 
+        $query = "SELECT * FROM Users 
                   WHERE firstName = ? AND lastName = ?";
         $stmt = $this->dbConnect->prepare($query);
         $stmt->execute([$firstName, $lastName]);
         $users = $stmt->fetch();
         return $users;
+    }
+
+    // Must be a string
+    // lastname1, lastname2, lastname3, etc
+    public function searchByLastNames($lastNames){
+        $query = "SELECT * FROM Users WHERE lastName IN (?)";
+        $stmt = $this->dbConnect->prepare($query);
+        $stmt->execute([$lastNames]);
+        $users = $stmt->fetch();
+        return $users;
+
+    }
+
+    // up to client to format
+    public function searchBy($fullNames=null, $addresses=null, $phoneNumbers=null){
+
+    }
+    public function searchByNames($names){
+
     }
     public function searchByAddress(){
     }

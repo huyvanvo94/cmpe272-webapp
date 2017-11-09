@@ -36,3 +36,6 @@ CREATE TABLE UserAddress(
 	 service VARCHAR(50),
 	 count INT
  );
+
+ -- Enable search by names, email, or phone numbers 
+ 

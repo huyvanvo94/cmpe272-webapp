@@ -43,6 +43,16 @@ loadUser("Ryan", "Green",
     "FL"
 );
 
+loadUser("Bob", "Dylan",
+    "Bob.dylan@sjsu.edu",
+    "5107111212",
+    "1134543909",
+    "41451",
+    "341 Southpark Ave",
+    "Orlando",
+    "FL"
+);
+
 
 
 
@@ -53,9 +63,6 @@ function loadUser($firstName, $lastName, $email, $mobile, $home, $zip, $address,
 	$user->insertPhoneNumber($id, $mobile, $home);
 	$user->insertAddress($id, $zip, $address, $city, $state);
 }
-
-
-
 
 
 
