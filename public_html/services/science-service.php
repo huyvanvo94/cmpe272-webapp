@@ -1,8 +1,8 @@
 <?php
 include '../src/cookies.php';
 
-setTimerCookie(SCIENCE);
-setCountCookie(SCIENCE_COUNT);
+//setTimerCookie(SCIENCE);
+//setCountCookie(SCIENCE_COUNT);
 setCookieCounting(T_SCI);
 setCookieTiming(T_SCI);
 ?>

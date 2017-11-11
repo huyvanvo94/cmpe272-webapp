@@ -57,7 +57,7 @@ class User{
                   WHERE firstName = ? AND lastName = ?";
         $stmt = $this->dbConnect->prepare($query);
         $stmt->execute([$firstName, $lastName]);
-        $users = $stmt->fetch();
+        $users = $stmt->fetchAll();
         return $users;
     }
 
@@ -67,7 +67,7 @@ class User{
         $query = "SELECT * FROM Users WHERE lastName IN (?)";
         $stmt = $this->dbConnect->prepare($query);
         $stmt->execute([$lastNames]);
-        $users = $stmt->fetch();
+        $users = $stmt->fetchAll();
         return $users;
 
     }

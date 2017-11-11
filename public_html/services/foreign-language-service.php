@@ -1,8 +1,8 @@
 <?php
 include '../src/cookies.php';
 
-setTimerCookie(FL);
-setCountCookie(FL_COUNT);
+//setTimerCookie(FL);
+//setCountCookie(FL_COUNT);
 setCookieCounting(T_FL);
 setCookieTiming(T_FL);
 ?>

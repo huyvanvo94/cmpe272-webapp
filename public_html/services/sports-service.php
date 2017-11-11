@@ -1,8 +1,8 @@
 <?php
 include '../src/cookies.php';
 
-setTimerCookie(SPORTS);
-setCountCookie(SPORTS_COUNT);
+//setTimerCookie(SPORTS);
+//setCountCookie(SPORTS_COUNT);
 setCookieCounting(T_SPORTS);
 setCookieTiming(T_SPORTS);
 ?>

@@ -7,4 +7,16 @@ $settings = [
     'password' => 'Sdfsdf4fff',
     'charset' => 'utf8'
 ];
+
+
+$settings_2 = [
+    'host' => 'sql3.freemysqlhosting.net',
+    'port' => '3306',
+    'name' => 'sql3204105',
+    'username' => 'sql3204105',
+    'password' => 'jlSmqssygg',
+    'charset' => 'utf8'
+]
+
+
 ?>
