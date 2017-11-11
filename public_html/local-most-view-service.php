@@ -19,7 +19,7 @@
 <body>
 
 <div class="main-container">
-<h1 id="title">Five Most View Services</h1>
+<h1 id="title">Five Most Visited Services</h1>
 
 <?php
 
