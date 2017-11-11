@@ -54,14 +54,6 @@ function displayUsersTable(){
         </style>";
     echo "<h1>List of Users:</h1>";
 
-
-    /*
-    $usersList = file("../users.txt");
-    for($i = 0; $i < count($usersList); $i++){
-        echo "<li>$usersList[$i]</li>";
-    } */
-
-
     $user = new User(new DbConnect($settings));
     $users = $user->fetchUsers();
 

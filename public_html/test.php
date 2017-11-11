@@ -1,24 +1,37 @@
 <?php
+$username = 'admin';
+$password = 'admin';
+$loginUrl = 'gadek.000webhostapp.com/process.php';
 
-include "src/cookies.php";
-include "src/database.php";
-include "../settings.php";
-include "table.php";
 
-echo "Tester";
+//init curl
+$ch = curl_init();
 
-$db = new DbConnect($settings);
+//Set the URL to work with
+curl_setopt($ch, CURLOPT_URL, $loginUrl);
 
-$user = new User($db);
+// ENABLE HTTP POST
+curl_setopt($ch, CURLOPT_POST, 1);
 
-/**
-$table = new HTMLTable();
-$table->addHeader('firstName')->addHeader('lastName');
-$table->setDatas($result);
+//Set the post parameters
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'username='.$username.'&password='.$password.'&submit=Submit');
 
-echo $table->getHTML();*/
+//Setting CURLOPT_RETURNTRANSFER variable to 1 will force cURL
+//not to print out the results of its query.
+//Instead, it will return the results as a string return value
+//from curl_exec() instead of the usual true/false.
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-while ( $row = $user->searchByName("huy", "vo") ) {
-    echo $row['firstName'];
+//curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+//execute the request (the login)
+
+
+$store = curl_exec($ch);
+
+
+echo $store;
+
+if(curl_error($ch)){
+    echo curl_error($ch);
 }
 ?>
