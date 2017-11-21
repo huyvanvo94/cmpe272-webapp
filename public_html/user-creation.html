@@ -6,6 +6,8 @@
 
     <script src="js/jquery-ui.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
     <script>
         $(init);
 
@@ -18,6 +20,65 @@
             var input = document.getElementsByName("city")[0];
             var autocomplete = new google.maps.places.Autocomplete(input, options);
         }
+
+    </script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.states = [
+                {"name":"Alabama","alpha-2":"AL"},
+                {"name":"Alaska","alpha-2":"AK"},
+                {"name":"Arizona","alpha-2":"AZ"},
+                {"name":"Arkansas","alpha-2":"AR"},
+                {"name":"California","alpha-2":"CA"},
+                {"name":"Colorado","alpha-2":"CO"},
+                {"name":"Connecticut","alpha-2":"CT"},
+                {"name":"Delaware","alpha-2":"DE"},
+                {"name":"District of Columbia","alpha-2":"DC"},
+                {"name":"Florida","alpha-2":"FL"},
+                {"name":"Georgia","alpha-2":"GA"},
+                {"name":"Hawaii","alpha-2":"HI"},
+                {"name":"Idaho","alpha-2":"ID"},
+                {"name":"Illinois","alpha-2":"IL"},
+                {"name":"Indiana","alpha-2":"IN"},
+                {"name":"Iowa","alpha-2":"IA"},
+                {"name":"Kansa","alpha-2":"KS"},
+                {"name":"Kentucky","alpha-2":"KY"},
+                {"name":"Lousiana","alpha-2":"LA"},
+                {"name":"Maine","alpha-2":"ME"},
+                {"name":"Maryland","alpha-2":"MD"},
+                {"name":"Massachusetts","alpha-2":"MA"},
+                {"name":"Michigan","alpha-2":"MI"},
+                {"name":"Minnesota","alpha-2":"MN"},
+                {"name":"Mississippi","alpha-2":"MS"},
+                {"name":"Missouri","alpha-2":"MO"},
+                {"name":"Montana","alpha-2":"MT"},
+                {"name":"Nebraska","alpha-2":"NE"},
+                {"name":"Nevada","alpha-2":"NV"},
+                {"name":"New Hampshire","alpha-2":"NH"},
+                {"name":"New Jersey","alpha-2":"NJ"},
+                {"name":"New Mexico","alpha-2":"NM"},
+                {"name":"New York","alpha-2":"NY"},
+                {"name":"North Carolina","alpha-2":"NC"},
+                {"name":"North Dakota","alpha-2":"ND"},
+                {"name":"Ohio","alpha-2":"OH"},
+                {"name":"Oklahoma","alpha-2":"OK"},
+                {"name":"Oregon","alpha-2":"OR"},
+                {"name":"Pennsylvania","alpha-2":"PA"},
+                {"name":"Rhode Island","alpha-2":"RI"},
+                {"name":"South Carolina","alpha-2":"SC"},
+                {"name":"South Dakota","alpha-2":"SD"},
+                {"name":"Tennessee","alpha-2":"TN"},
+                {"name":"Texas","alpha-2":"TX"},
+                {"name":"Utah","alpha-2":"UT"},
+                {"name":"Vermont","alpha-2":"VT"},
+                {"name":"Virginia","alpha-2":"VA"},
+                {"name":"Washington","alpha-2":"WA"},
+                {"name":"West Virginia","alpha-2":"WV"},
+                {"name":"Wisconsin","alpha-2":"WI"},
+                {"name":"Wyoming","alpha-2":"WY"}
+            ];
+        });
     </script>
 
     <style>
@@ -38,7 +99,7 @@
             text-align: center;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
-        .form input {
+        .form input, select {
             outline: 0;
             background: #f2f2f2;
             width: 100%;
@@ -111,6 +172,10 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        .name{
+            text-transform: capitalize;
+        }
     </style>
 
     <script>
@@ -160,21 +225,90 @@
 </head>
 <body>
 
-<div class="form-container">
-    <!--Will validate soon -->
+<div class="form-container" ng-app="myApp" ng-controller="myCtrl">
 
     <form onsubmit="return validate();" class="form" method="post" action="response/user-create-handle.php">
         <h1>New User</h1>
-        <input type="text" name="firstName" placeholder="first name" required> <br>
-        <input type="text" name="lastName" placeholder="last name" required><br>
-        <input type="text" name="email" placeholder="email address" required><br>
+        <label>First Name</label>
+        <input class="name" type="text" name="firstName" placeholder="first name" required> <br>
+        <label>Last Name</label>
 
-        <input type="text" name="mobile" placeholder="mobile phone number" required><br>
-        <input type="text" name="home" placeholder="home phone number" required><br>
-        <input maxlength="5" type="tel" name="zip" placeholder="zip code" required><br>
-        <input type="text" name="street" placeholder="address" required><br>
+        <input class="name" type="text" name="lastName" placeholder="last name" required><br>
+        <label>Email Address</label>
+        <input type="text" name="email" placeholder="example@gamil.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required><br>
+
+        <label>Mobile Phone Number</label>
+        <input maxlength="10" minlength="10" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="ex: 1231231231" required><br>
+
+        <label>Home Phone Number</label>
+        <input maxlength="10" minlength="10" type="tel" name="home" pattern="[0-9]{10}" placeholder="ex: 1231231231" required><br>
+
+        <label>Zip Code</label>
+        <input minlength="5" maxlength="5" type="tel" name="zip" placeholder="zip code" required><br>
+
+        <label>Home Address</label>
+        <input type="text" name="street" placeholder="123 MLK St" required><br>
+
+        <label>City</label>
         <input type="text" name="city" placeholder="city" required><br>
-        <input type="text" name="state" placeholder="state" required><br>
+
+        <input type="text" name="country" placeholder="USA" value="USA" disabled>
+
+        <label>State</label>
+        <select name="state" required>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>
+
         <input type="submit" name="submit" value="Submit">
 
     </form>

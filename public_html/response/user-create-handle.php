@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($_POST['submit'] == 'Submit'){
         try{
 
+
+
             // get user
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
@@ -26,16 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $mobile = $_POST["mobile"];
             $home = $_POST["home"];
 
+            /*
+            echo $firstName."</br>";
+            echo $lastName."</br>";
+
+            echo $email."</br>";
+            echo $zip."</br>";
+            echo $city."</br>";
+            echo $state."</br>";
+            echo $mobile."</br>";
+            echo $home."</br>";*/
+
             $dbConn = new DbConnect($settings);
             $user = new User($dbConn);
 
-            $result = $user->insertUser($firstName, $lastName, $email);
+            $firstName = ucfirst(strtolower($firstName));
+            $lastName = ucfirst(strtolower($lastName));
 
-            if($result == true){
-                $userId = $user->getUserId($firstName, $lastName, $email);
-                $user->insertPhoneNumber($userId, $home, $mobile);
-                $user->insertAddress($userId, $zip, $street, $city, $state);
-            }
+
+            $result = $user->insertUser($firstName, $lastName, $email, $home, $mobile, $zip, $street, $city, $state);
+
+
+
             header('Location: ' . '../user-creation.html');
 
         }catch (PDOException $e){

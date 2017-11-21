@@ -1,4 +1,5 @@
 <?php
+/*
 $settings = [
     'host' => 'fdb12.your-hosting.net',
     'port' => '3306',
@@ -8,15 +9,28 @@ $settings = [
     'charset' => 'utf8'
 ];
 
+*/
+// array for localhost
 
-$settings_2 = [
-    'host' => 'sql3.freemysqlhosting.net',
+/*
+ *
+ * $settings = [
+    'host' => 'fdb12.your-hosting.net',
     'port' => '3306',
-    'name' => 'sql3204105',
-    'username' => 'sql3204105',
-    'password' => 'jlSmqssygg',
+    'name' => '2485255_db',
+    'username' => '2485255_db',
+    'password' => 'Sdfsdf4fff',
     'charset' => 'utf8'
-]
+];
+ */
+$settings = [
+    'host' => '127.0.0.1',
+    'port' => '3306',
+    'name' => 'db',
+    'username' => 'root',
+    'password' => 'root',
+    'charset' => 'utf8'
+];
 
 
 ?>

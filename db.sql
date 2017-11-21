@@ -2,33 +2,19 @@ CREATE TABLE Users(
 	userID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	firstName VARCHAR(30),
 	lastName VARCHAR(30),
-	email VARCHAR(30),
-	PRIMARY KEY(userID)
-);
-
-CREATE TABLE PhoneNumber(
-	numberID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	userID   INT UNSIGNED, 
-	home VARCHAR(20),
-	mobile VARCHAR(20),
-	PRIMARY KEY(numberID),
-	FOREIGN KEY (userID) REFERENCES Users(userID)
-);
--- Add for Address 
-CREATE TABLE Address(
-		addressID 	  INT UNSIGNED NOT NULL AUTO_INCREMENT,
-		userID 	      INT UNSIGNED,
-		zip           VARCHAR(12),
-  	street        VARCHAR(40),
-  	city          VARCHAR(40),
-  	state         VARCHAR(40),
-  	PRIMARY KEY (addressID),
-  	FOREIGN KEY (userID) REFERENCES Users(userID)
+	email VARCHAR(30) UNIQUE,
+	home VARCHAR(10),
+	mobile VARCHAR(10) UNICODE,
+	zip    VARCHAR(5),
+	street  VARCHAR(40),
+	city    VARCHAR(40),
+	state CHAR(2),
+	PRIMARY KEY (userID)
 );
 -- Holds ID from User and Address
 CREATE TABLE UserAddress(
 	userID INT,
-	addressID INT 
+	addressID INT
 );
 
 CREATE TABLE ServiceCount(
@@ -38,4 +24,8 @@ CREATE TABLE ServiceCount(
 );
 
  -- Enable search by names, email, or phone numbers 
- 
+
+
+INSERT INTO  Users
+(firstName, lastName, email, home, mobile, zip, street, city, state)
+VALUES ( "Hfuy", "Vo", "huy@gmail.com", "7531231231", "1231231111", "94501", "752 Pacific Ave", "Alameda", "CA");

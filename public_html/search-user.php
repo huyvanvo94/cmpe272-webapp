@@ -29,7 +29,7 @@
             width: 100%;
             border: 0;
             margin: 0 0 15px;
-            padding: 15px;
+            padding: 10px;
             box-sizing: border-box;
             font-size: 14px;
         }
@@ -103,14 +103,26 @@
 </head>
 <body>
 
+<!-- User search form allowing search by names, email or phone numbers. -->
 <div class="container">
-    <form class="form" action="">
+    <form class="form" method="post" action="response/user-search-handle.php">
         <h4>Search Users</h4>
-        <input type="text" name="names" placeholder="search by name"/> <br>
-        <input type="text" placeholder="search by email" /> <br>
-        <input type="text" placeholder="search by phone number" /> <br>
+        <label>By First Name</label>
+        <input class="name" type="text" name="firstName" placeholder="first name"> <br>
 
-        <input type="submit" value="Submit">
+        <label>By Last Name</label>
+        <input class="name" type="text" name="lastName" placeholder="last name"><br>
+
+        <label>By Email</label>
+        <input name="email" type="text" placeholder="example@gamil.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" /> <br>
+
+        <label>By Home Number</label>
+        <input maxlength="10" minlength="10" type="tel" name="home" pattern="[0-9]{10}" placeholder="ex: 1231231231"/> <br>
+
+        <label>By Mobile Number</label>
+        <input maxlength="10" minlength="10" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="ex: 1231231231"/> <br>
+
+        <input type="submit" name="submit" value="Submit">
 
     </form>
 </div>

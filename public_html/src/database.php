@@ -72,61 +72,102 @@ class User{
 
     }
 
-    // up to client to format
-    public function searchBy($fullNames=null, $addresses=null, $phoneNumbers=null){
 
-    }
-    public function searchByNames($names){
+    public function insertUser($firstName, $lastName, $email, $home, $mobile, $zip, $street, $city, $state)
+    {
+        try {
+            $userInsertStmt = "INSERT INTO Users 
+                            (firstName, lastName, email, home, mobile, zip, street, city, state)
+                            VALUES (:firstName, :lastName, :email, :home, :mobile, :zip, :street, :city, :state)
+                            ";
 
-    }
-    public function searchByAddress(){
-    }
-    public function searchByNumbers(){
-    }
-    public function insertUser($firstName, $lastName, $email){
-        try{
-            $userInsertStmt = "INSERT INTO Users(firstName, lastName, email) 
-                              VALUES (:firstName, :lastName, :email)";
             $stmt = $this->dbConnect->prepare($userInsertStmt);
             $stmt->bindValue(':firstName', $firstName);
             $stmt->bindValue(':lastName', $lastName);
             $stmt->bindValue(':email', $email);
-            $stmt->execute();
-            return true;
-        }catch (PDOException $e){
-            return false;
-        }
-    }
-    public function insertPhoneNumber($userId, $home, $mobile){
-        try{
-            $numberStmt = "INSERT INTO PhoneNumber(userId, home, mobile) 
-                          VALUES (:userId, :home, :mobile)";
-            $stmt = $this->dbConnect->prepare($numberStmt);
-            $stmt->bindValue(':userId', $userId);
             $stmt->bindValue(':home', $home);
             $stmt->bindValue(':mobile', $mobile);
-            $stmt->execute();
-            return true;
-        }catch (PDOException $e){
-            return false;
-        }
-    }
-    public function insertAddress($userId, $zip, $street, $city, $state){
-        try{
-            $addressStmt = "INSERT INTO Address(userId, zip, street, city, state) 
-                            VALUES (:userId, :zip, :street, :city, :state)";
-            $stmt = $this->dbConnect->prepare($addressStmt);
-            $stmt->bindValue(':userId', $userId);
             $stmt->bindValue(':zip', $zip);
             $stmt->bindValue(':street', $street);
             $stmt->bindValue(':city', $city);
             $stmt->bindValue(':state', $state);
+
             $stmt->execute();
             return true;
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
+            echo $e;
             return false;
         }
     }
+
+
+    public function search($firstName=null, $lastName=null, $email=null, $home=null, $mobile=null ){
+
+        if($firstName == null && $lastName == null && $email == null && $home == null && $mobile==null){
+            $sql = "SELECT * FROM Users";
+
+            $stmt = $this->dbConnect->prepare($sql);
+            $stmt->execute();
+
+            return  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        /*
+        $stmt = $this->dbConnect->query("SELECT * FROM Users WHERE firstName = 'huy' ");
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result;*/
+
+
+        $baseQuery = "SELECT * FROM Users WHERE ";// firstName = :firstName AND lastName = :lastName";
+
+
+        if($firstName){
+            $baseQuery .= "firstName = :firstName AND";
+        }
+        if($lastName){
+           $baseQuery .= " lastName = :lastName AND";
+        }
+        if($email){
+            $baseQuery .= " email = :email AND";
+        }
+
+        if($home){
+            $baseQuery .= " home = :home AND";
+
+        }
+
+        if($mobile){
+            $baseQuery .= " mobile = :mobile AND";
+        }
+
+        if(substr($baseQuery, count($baseQuery) -4) === 'AND'){
+            $baseQuery = substr($baseQuery, 0, count($baseQuery) - 5);
+        }
+
+        $stmt = $this->dbConnect->prepare($baseQuery);
+
+
+        if($firstName)
+            $stmt->bindValue(':firstName', $firstName);
+
+        if($lastName)
+            $stmt->bindValue(':lastName', $lastName);
+
+        if($email)
+            $stmt->bindValue(':email', $email);
+
+        if($home)
+            $stmt->bindValue(':home', $home);
+
+        if($mobile)
+            $stmt->bindValue(':mobile', $mobile);
+
+        $stmt->execute();
+
+        return  $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getUserId($firstName, $lastName, $email){
         $userIdQuery = "SELECT userId FROM Users 
                         WHERE firstName= ? 
