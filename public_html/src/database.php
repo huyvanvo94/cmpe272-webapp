@@ -93,8 +93,7 @@ class User{
             $stmt->bindValue(':state', $state);
             $stmt->bindValue(':country', $country);
 
-            $stmt->execute();
-            return true;
+            return $stmt->execute();
         } catch (PDOException $e) {
             echo $e;
             return false;

@@ -13,10 +13,3 @@ CREATE TABLE Users(
 	PRIMARY KEY (userID)
 );
 
-
-CREATE TABLE ServiceCount(
-	 serviceId INT UNSIGNED NOT NULL  AUTO_INCREMENT,
-	 service VARCHAR(50),
-	 count INT
-);
-

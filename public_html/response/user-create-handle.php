@@ -184,7 +184,12 @@
 
                     $result = $user->insertUser($firstName, $lastName, $email, $home, $mobile, $zip, $street, $city, $state, $country);
 
-                    echo "<p style='text-align: center'>Success!</p>";
+                    if($result)
+                        echo "<p style='text-align: center'>Success!</p>";
+                    else{
+
+                          echo "<p style='text-align: center'>Could not add. Email and mobile number number be unique</p>";
+                    }
 
                 }catch (PDOException $e){
 
@@ -200,7 +205,7 @@
         <label>Last Name</label>
 
         <input pattern="[^' ']+" class="name" type="text" name="lastName" placeholder="last name" required><br>
-        <label>Email Address</label>       <input type="text" name="email" placeholder="example@gamil.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required><br>
+        <label>Email Address</label>       <input type="text" name="email" placeholder="example@gamil.com" pattern="^.+@.+\..{2,4}$"  required><br>
 
         <label>Mobile Phone Number</label>
         <input maxlength="10" minlength="10" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="ex: 1231231231" required><br>
