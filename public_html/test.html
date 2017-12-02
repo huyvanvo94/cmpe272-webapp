@@ -8,7 +8,7 @@
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
         .form-container {
-            width: 50%;
+            width: 360px;
             margin: auto;
         }
 
@@ -16,7 +16,7 @@
             position: relative;
             z-index: 1;
             background: #FFFFFF;
-            max-width: 50%;
+            max-width: 360px;
             margin: 0 auto 100px;
             padding: 45px;
             text-align: center;
@@ -101,39 +101,20 @@
         }
     </style>
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link rel="stylesheet" type="text/css" href="common.css">
-
-
-
 
 </head>
 
-
-
 <body>
-<div id="nav">
-    <div id="nav-wrapper">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="contacts.php">Contacts</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="login-admin.html">Secure</a> </li>
-            <li><a href="user-choose.html">User</a> </li>
-        </ul>
-    </div>
-</div>
 
-<div class="form-container" >
+<div class="form-container" ng-app="myApp" ng-controller="myCtrl">
 
     <form onsubmit="return validate();" class="form" method="post" action="response/user-create-handle.php">
         <h1>New User</h1>
         <label>First Name</label>
-        <input pattern="[^' ']+" class="name" type="text" name="firstName" placeholder="first name"  required> <br>
+        <input class="name" type="text" name="firstName" placeholder="first name" required> <br>
         <label>Last Name</label>
 
-        <input pattern="[^' ']+" class="name" type="text" name="lastName" placeholder="last name" required><br>
+        <input class="name" type="text" name="lastName" placeholder="last name" required><br>
         <label>Email Address</label>       <input type="text" name="email" placeholder="example@gamil.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required><br>
 
         <label>Mobile Phone Number</label>
@@ -146,21 +127,21 @@
 
         <div id="locationField">
             <input id="autocomplete" placeholder="Enter your address here!"
-                   onFocus="geolocate()" type="text">
+                   onFocus="geolocate()" type="text"></input>
         </div>
 
 
-        <input pattern= "[0-9]*" type="tel" class="field" id="street_number" name="street_number" placeholder="street number" required>
+        <input type="tel" class="field" id="street_number" name="street_number" placeholder="street number" disabled>
 
-        <input pattern="^[^0-9]*" class="field" id="route" name="address" placeholder="address" required>
+        <input class="field" id="route" name="address" placeholder="address" disabled>
 
-        <input pattern= "[0-9]*" minlength="5" maxlength="5" type="tel" name="zip" placeholder="zip code" id="postal_code"  required><br>
+        <input minlength="5" maxlength="5" type="tel" name="zip" placeholder="zip code" id="postal_code" disabled ><br>
 
-        <input pattern="^[^0-9]*" type="text" name="city"  placeholder="city" id="locality" required><br>
+        <input type="text" name="city" placeholder="city" id="locality" disabled ><br>
 
-        <input pattern="^[^0-9]*" type="text" id="administrative_area_level_1"  placeholder="state" name="state" required>
+        <input type="text" id="administrative_area_level_1" placeholder="state" name="state" disabled>
 
-        <input pattern="^[^0-9]*" type="text" id="country" name="country" placeholder="country" required>
+        <input type="text" id="country" name="country" placeholder="country" disabled>
 
         <input type="submit" name="submit" value="Submit">
     </form>
@@ -244,9 +225,6 @@
 
 <script>
 
-    function hasNumber(myString) {
-        return /\d/.test(myString);
-    }
 
 
     function validate() {
@@ -271,31 +249,19 @@
             return false;
         }
 
-        var streetNumber = document.getElementById("street_number");
-        if(!streetNumber.match(/^[0-9]*$/)){
-            alert("Street must contains numbers only");
-            return false;
-        }
-
-        var zip = document.getElementById("zip");
+        var zip = document.getElementsByName("zip")[0].value;
         if(!zip.match(/^[0-9]*$/)){
-            alert("Zip must contains numbers only");
+            alert("zip must contains numbers only");
             return false;
         }
 
-        var street = document.getElementById("route");
 
-        if(hasNumber(street)){
-            alert("Address must only contains letters");
-            return false;
-        }
+        /**
+         *
+         * /^\(\d{3}\)\d{7}/
+         */
 
-        var state = document.getElementById("administrative_area_level_1");
-
-        if(hasNumber(state)){
-            alert("States cannot contains numbers");
-            return false;
-        }
+        var phoneRE = /^\(\d{3}\)\d{3}-\d{4}$/;
 
         return true;
     }

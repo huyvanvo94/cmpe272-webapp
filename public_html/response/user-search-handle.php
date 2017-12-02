@@ -7,14 +7,16 @@ include '../table.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if($_POST['submit'] == 'Submit'){
 
-        $firstName = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $home = $_POST["home"];
-        $mobile = $_POST["mobile"];
-        $email = $_POST["email"];
+        try {
+
+            $firstName = $_POST["firstName"];
+            $lastName = $_POST["lastName"];
+            $home = $_POST["home"];
+            $mobile = $_POST["mobile"];
+            $email = $_POST["email"];
 
 
-        echo "<style>
+            echo "<style>
         table {
             border-collapse: collapse;
             width: 100%;
@@ -34,35 +36,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         </style>";
 
 
-        echo "<h1>Found Users</h1>";
-
-        $db = new DbConnect($settings);
-        $user = new User($db);
+            $db = new DbConnect($settings);
+            $user = new User($db);
 
 
-        $results = $user->search($firstName, $lastName, $email, $home, $mobile);
+            $results = $user->search($firstName, $lastName, $email, $home, $mobile);
+
+            if ($results) {
+                echo "<h1>Found Users</h1>";
+                $table = new HTMLTable();
+
+                $table->addHeader('firstName')
+                    ->addHeader('lastName')
+                    ->addHeader('email')
+                    ->addHeader('home')
+                    ->addHeader('mobile')
+                    ->addHeader('zip')
+                    ->addHeader('street')
+                    ->addHeader('city')
+                    ->addHeader('state')
+                    ->addHeader('country');
+
+                $table->setDatas($results);
+
+                echo $table->getHTML();
+
+                echo "</table>";
 
 
+            } else {
+                echo "<h1>No users found</h1>";
+            }
+        }catch (Exception $e){
 
-        $table = new HTMLTable();
-
-        $table->addHeader('firstName')
-            ->addHeader('lastName')
-            ->addHeader('email')
-            ->addHeader('home')
-            ->addHeader('mobile')
-            ->addHeader('zip')
-            ->addHeader('street')
-            ->addHeader('city')
-            ->addHeader('state');
-
-        $table->setDatas($results);
-
-        echo $table->getHTML();
-
-        echo "</table>";
-
-
+            echo "<h1>No users found! </h1>";
+        }
 
     }
 }

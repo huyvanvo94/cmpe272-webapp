@@ -73,12 +73,12 @@ class User{
     }
 
 
-    public function insertUser($firstName, $lastName, $email, $home, $mobile, $zip, $street, $city, $state)
+    public function insertUser($firstName, $lastName, $email, $home, $mobile, $zip, $street, $city, $state, $country)
     {
         try {
             $userInsertStmt = "INSERT INTO Users 
-                            (firstName, lastName, email, home, mobile, zip, street, city, state)
-                            VALUES (:firstName, :lastName, :email, :home, :mobile, :zip, :street, :city, :state)
+                            (firstName, lastName, email, home, mobile, zip, street, city, state, country)
+                            VALUES (:firstName, :lastName, :email, :home, :mobile, :zip, :street, :city, :state, :country)
                             ";
 
             $stmt = $this->dbConnect->prepare($userInsertStmt);
@@ -91,6 +91,7 @@ class User{
             $stmt->bindValue(':street', $street);
             $stmt->bindValue(':city', $city);
             $stmt->bindValue(':state', $state);
+            $stmt->bindValue(':country', $country);
 
             $stmt->execute();
             return true;
@@ -123,27 +124,27 @@ class User{
 
 
         if($firstName){
-            $baseQuery .= "firstName = :firstName AND";
+            $baseQuery .= "firstName LIKE :firstName OR";
         }
         if($lastName){
-           $baseQuery .= " lastName = :lastName AND";
+           $baseQuery .= " lastName LIKE :lastName OR";
         }
         if($email){
-            $baseQuery .= " email = :email AND";
+            $baseQuery .= " email LIKE :email OR";
         }
 
         if($home){
-            $baseQuery .= " home = :home AND";
-
+            $baseQuery .= " home LIKE :home OR";
         }
 
         if($mobile){
-            $baseQuery .= " mobile = :mobile AND";
+            $baseQuery .= " mobile LIKE :mobile OR";
         }
 
-        if(substr($baseQuery, count($baseQuery) -4) === 'AND'){
-            $baseQuery = substr($baseQuery, 0, count($baseQuery) - 5);
+        if(substr($baseQuery, count($baseQuery) - 3) === 'OR'){
+            $baseQuery = substr($baseQuery, 0, count($baseQuery) - 4);
         }
+
 
         $stmt = $this->dbConnect->prepare($baseQuery);
 

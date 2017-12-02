@@ -7,11 +7,11 @@ include '../settings.php';
 $db = new DbConnect($settings);
 $user = new User($db);
 //1
-loadUser("John", "Le", "john.le.@sjsu.edu", "5102341232", "4354532901", "94632", "1033 Lincoln Ave", "Oakland", "CA");
+loadUser("John", "Le", "john.le.@sjsu.edu", "5102341232", "4354532901", "94632", "1033 Lincoln Ave", "Oakland", "CA", "United States");
 //2
-loadUser("Bobby", "Le", "Bobby.le.@sjsu.edu", "5102641232", "4334532901","94652", "1013 Lincoln Ave", "Oakland", "CA");
+loadUser("Bobby", "Le", "Bobby.le.@sjsu.edu", "5102641232", "4334532901","94652", "1013 Lincoln Ave", "Oakland", "CA", "United States");
 //3
-loadUser("Jessica", "Johnson", "Jessica.johnson.@sjsu.edu","3213095489","8884540348", "94651", "1013 Park Ave", "New York", "NY");
+loadUser("Jessica", "Johnson", "Jessica.johnson.@sjsu.edu","3213095489","8884540348", "94651", "1013 Park Ave", "New York", "NY", "United States");
 //4
 
 loadUser("Sarah", "Smith",
@@ -21,7 +21,8 @@ loadUser("Sarah", "Smith",
     "42451",
     "242 Golden St",
     "Orlando",
-    "FL"
+    "FL",
+    "United States"
 );
 
 loadUser("Ryan", "Green",
@@ -31,7 +32,8 @@ loadUser("Ryan", "Green",
     "41451",
     "242 Park St",
     "Orlando",
-    "FL"
+    "FL",
+    "United States"
 );
 
 loadUser("Bob", "Dylan",
@@ -41,7 +43,8 @@ loadUser("Bob", "Dylan",
     "41451",
     "341 Southpark Ave",
     "Orlando",
-    "FL"
+    "FL",
+    "United States"
 );
 
 
@@ -53,7 +56,8 @@ loadUser("Bob", "Dylan",
     "41451",
     "341 Southpark Ave",
     "Orlando",
-    "FL"
+    "FL",
+    "United States"
 );
 
 
@@ -64,7 +68,8 @@ loadUser("Billy", "Dylan",
     "41451",
     "341 Southpark Ave",
     "Orlando",
-    "NY"
+    "NY",
+    "United States"
 );
 
 loadUser("John", "Le",
@@ -74,7 +79,8 @@ loadUser("John", "Le",
     "41451",
     "311 Southpark Ave",
     "Orlando",
-    "NY"
+    "NY",
+    "United States"
 );
 
 
@@ -86,7 +92,8 @@ loadUser("Jon", "Lee",
     "41441",
     "312 Lincoln Street",
     "Orlando",
-    "FL"
+    "FL",
+    "United States"
 );
 
 
@@ -98,7 +105,8 @@ loadUser("Jessica", "Parker",
     "41422",
     "101 Lincoln Ave",
     "San Jose",
-    "FL"
+    "FL",
+    "United States"
 );
 
 loadUser("Tony", "Parker",
@@ -108,7 +116,8 @@ loadUser("Tony", "Parker",
     "41421",
     "102 Lincoln Ave",
     "San Jose",
-    "CA"
+    "CA",
+    "United States"
 );
 
 loadUser("Tony", "Stark",
@@ -118,7 +127,8 @@ loadUser("Tony", "Stark",
     "41421",
     "1 Lincoln Ave",
     "San Jose",
-    "CA"
+    "CA",
+    "United States"
 );
 
 loadUser("Sarah", "Connor",
@@ -128,7 +138,8 @@ loadUser("Sarah", "Connor",
     "23421",
     "12 Alameda Ave",
     "San Jose",
-    "CA"
+    "CA",
+    "United States"
 );
 
 
@@ -139,7 +150,8 @@ loadUser("Hal", "Connor",
     "21121",
     "123 Alameda St",
     "San Jose",
-    "CA"
+    "CA",
+    "United States"
 );
 
 
@@ -151,7 +163,8 @@ loadUser("Mike", "McLee",
     "21101",
     "123 Oakland St",
     "Alameda",
-    "CA"
+    "CA",
+    "United States"
 );
 
 loadUser("Adam", "Yim",
@@ -161,7 +174,8 @@ loadUser("Adam", "Yim",
     "11101",
     "13 Alameda St",
     "Alameda",
-    "CA"
+    "CA",
+    "United States"
 );
 
 loadUser("Bobby", "Johnson",
@@ -171,7 +185,8 @@ loadUser("Bobby", "Johnson",
     "11111",
     "133 Alameda St",
     "Sunnyvale",
-    "CA"
+    "CA",
+    "United States"
 );
 
 
@@ -182,7 +197,8 @@ loadUser("Steve", "Bone",
     "21121",
     "12 Park St",
     "San Jose",
-    "CA"
+    "CA",
+    "United States"
 );
 
 loadUser("Trung", "Vo",
@@ -192,13 +208,14 @@ loadUser("Trung", "Vo",
     "94501",
     "111 Pacific St",
     "Alameda",
-    "CA"
+    "CA",
+    "United States"
 );
 
 
-function loadUser($firstName, $lastName, $email, $home, $mobile, $zip, $address, $city, $state){
+function loadUser($firstName, $lastName, $email, $home, $mobile, $zip, $address, $city, $state, $country){
 	global $user; 
-	$user->insertUser($firstName, $lastName, $email, $mobile, $home, $zip, $address, $city, $state);
+	$user->insertUser($firstName, $lastName, $email, $mobile, $home, $zip, $address, $city, $state, $country);
 }
 
 

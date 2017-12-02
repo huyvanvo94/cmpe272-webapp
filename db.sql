@@ -3,19 +3,16 @@ CREATE TABLE Users(
 	firstName VARCHAR(30),
 	lastName VARCHAR(30),
 	email VARCHAR(30) UNIQUE,
-	home VARCHAR(10),
-	mobile VARCHAR(10) UNICODE,
-	zip    VARCHAR(5),
+	home VARCHAR(20),
+	mobile VARCHAR(20) UNIQUE,
+	zip    VARCHAR(20),
 	street  VARCHAR(40),
 	city    VARCHAR(40),
-	state CHAR(2),
+	state VARCHAR(40),
+	country VARCHAR(40),
 	PRIMARY KEY (userID)
 );
--- Holds ID from User and Address
-CREATE TABLE UserAddress(
-	userID INT,
-	addressID INT
-);
+
 
 CREATE TABLE ServiceCount(
 	 serviceId INT UNSIGNED NOT NULL  AUTO_INCREMENT,
@@ -23,9 +20,3 @@ CREATE TABLE ServiceCount(
 	 count INT
 );
 
- -- Enable search by names, email, or phone numbers 
-
-
-INSERT INTO  Users
-(firstName, lastName, email, home, mobile, zip, street, city, state)
-VALUES ( "Hfuy", "Vo", "huy@gmail.com", "7531231231", "1231231111", "94501", "752 Pacific Ave", "Alameda", "CA");

@@ -100,13 +100,31 @@
             -moz-osx-font-smoothing: grayscale;
         }
     </style>
+
+
+<link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
+
+<div id="nav">
+    <div id="nav-wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contacts.php">Contacts</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="login-admin.html">Secure</a> </li>
+            <li><a href="user-choose.html">User</a> </li>
+        </ul>
+    </div>
+</div>
 
 <!-- User search form allowing search by names, email or phone numbers. -->
 <div class="container">
     <form class="form" method="post" action="response/user-search-handle.php">
         <h4>Search Users</h4>
+        <p>Empty form will result in fetch all users</p>
         <label>By First Name</label>
         <input class="name" type="text" name="firstName" placeholder="first name"> <br>
 
@@ -121,6 +139,7 @@
 
         <label>By Mobile Number</label>
         <input maxlength="10" minlength="10" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="ex: 1231231231"/> <br>
+
 
         <input type="submit" name="submit" value="Submit">
 

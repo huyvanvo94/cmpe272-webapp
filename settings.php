@@ -1,5 +1,5 @@
 <?php
-/*
+
 $settings = [
     'host' => 'fdb12.your-hosting.net',
     'port' => '3306',
@@ -9,7 +9,6 @@ $settings = [
     'charset' => 'utf8'
 ];
 
-*/
 // array for localhost
 
 /*
@@ -23,6 +22,8 @@ $settings = [
     'charset' => 'utf8'
 ];
  */
+
+/*
 $settings = [
     'host' => '127.0.0.1',
     'port' => '3306',
@@ -31,6 +32,6 @@ $settings = [
     'password' => 'root',
     'charset' => 'utf8'
 ];
-
+*/
 
 ?>

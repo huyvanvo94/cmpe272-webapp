@@ -35,10 +35,17 @@ function curl_login($loginData, $url){
         CURLOPT_POSTFIELDS => $loginData,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_COOKIESESSION => true,
-        CURLOPT_COOKIEJAR => 'cookie.txt'
+        CURLOPT_COOKIEJAR => 'cookie.txt',
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_PROXYPORT => "80",
+
     ));
 
     $output = curl_exec($ch);
+
+    if($output === false){
+        return curl_error($ch);
+    }
 
     return $output;
 }
