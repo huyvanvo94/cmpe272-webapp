@@ -23,6 +23,24 @@ function httpPost($url,$params)
     return $output;
 
 }
+function curl_mysite(){
+    $ch2 = curl_init();
+    $username = 'admin';
+    $password = 'admin';
+    $myurl2 = "http://huyvanvo94.com/login-admin.html";
+    curl_setopt ($ch2, CURLOPT_URL, $myurl2);
+    curl_setopt ($ch2, CURLOPT_POST, 1);
+    curl_setopt ($ch2, CURLOPT_POSTFIELDS, 'username='.$username.'&password='.$password.'&submit=Submit');
+    curl_setopt ($ch2, CURLOPT_HEADER, 0);
+    curl_setopt ($ch2, CURLOPT_RETURNTRANSFER, 1);
+    curl_exec($ch2);
+    curl_setopt($ch2, CURLOPT_URL, 'http://huyvanvo94.com/response/login.php');
+    $content=curl_exec($ch2);
+    curl_close($ch2);
+
+    return $content;
+}
+
 
 function curl_login($loginData, $url){
 
@@ -43,9 +61,6 @@ function curl_login($loginData, $url){
 
     $output = curl_exec($ch);
 
-    if($output === false){
-        return curl_error($ch);
-    }
 
     return $output;
 }
